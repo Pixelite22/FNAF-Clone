@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cxvlh32ast871"]
+
+[ext_resource type="FontFile" uid="uid://csghccjbb0gs7" path="res://Asssets/Fonts/consolas.ttf" id="1_5wu7n"]
+[ext_resource type="Script" uid="uid://3pbodj2h31ae" path="res://Scenes and Code/Code/Warning Screen Code/message.gd" id="2_1ebw5"]
+
+[node name="Warning" type="Control" unique_id=1099972721]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=519156003]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=2082046314]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Message" type="Label" parent="." unique_id=1721899805]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 294.0
+offset_top = 286.0
+offset_right = -303.0
+offset_bottom = -301.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_5wu7n")
+theme_override_font_sizes/font_size = 30
+text = "WARNING!
+
+This game contains flashing lights, loud noises, and lots of jumpscares!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_1ebw5")

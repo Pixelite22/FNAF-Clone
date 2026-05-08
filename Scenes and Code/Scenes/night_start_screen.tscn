@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cjs5ucpcstag0"]
+
+[ext_resource type="Script" uid="uid://bhfnx51msxamh" path="res://Scenes and Code/Code/Night Screen Code/night_start_screen.gd" id="1_ciaw7"]
+[ext_resource type="FontFile" uid="uid://t5poni6udcrx" path="res://Asssets/Fonts/LcdSolid-VPzB.ttf" id="1_e4edo"]
+[ext_resource type="Shader" uid="uid://cylnunao24ngi" path="res://Asssets/Shaders/Remove Black.gdshader" id="2_ciaw7"]
+[ext_resource type="Texture2D" uid="uid://c6mpe6qdt8twu" path="res://Asssets/Textures/Static/4.png" id="3_ob7os"]
+[ext_resource type="Texture2D" uid="uid://i6ljdv0f75ns" path="res://Asssets/Textures/Static/6.png" id="4_1tii6"]
+[ext_resource type="Texture2D" uid="uid://brps178w1spc1" path="res://Asssets/Textures/Static/8.png" id="5_mxsrm"]
+[ext_resource type="Texture2D" uid="uid://0p2n1xm1b1ii" path="res://Asssets/Textures/Static/9.png" id="6_exs8n"]
+[ext_resource type="Texture2D" uid="uid://b4tjb6yvbfwru" path="res://Asssets/Textures/Static/10.png" id="7_x1y1r"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ppevj"]
+shader = ExtResource("2_ciaw7")
+shader_parameter/threshold = 0.1
+shader_parameter/alpha = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_leeto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ob7os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1tii6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mxsrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_exs8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x1y1r")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Blip",
+"speed": 5.0
+}]
+
+[node name="Night Start Screen" type="Control" unique_id=1402034381]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ciaw7")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="ColorRect" parent="." unique_id=299900657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Label" parent="." unique_id=249731323]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 276.0
+offset_right = 852.0
+offset_bottom = 403.0
+theme_override_fonts/font = ExtResource("1_e4edo")
+theme_override_font_sizes/font_size = 61
+text = "12:00 AM
+First Night"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Blip Flash" type="AnimatedSprite2D" parent="." unique_id=939639977]
+material = SubResource("ShaderMaterial_ppevj")
+sprite_frames = SubResource("SpriteFrames_leeto")
+animation = &"Blip"
+autoplay = "Blip"
+frame = 4
+frame_progress = 1.0
+centered = false
+
+[node name="Blip Audio" type="AudioStreamPlayer2D" parent="Blip Flash" unique_id=428673572]
