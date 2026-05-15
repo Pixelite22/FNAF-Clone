@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	boop_noise.play()
+	boop_noise.play() #When nose pressed go boop
