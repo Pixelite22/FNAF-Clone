@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dw74ibnekgqf6"]
+
+[ext_resource type="Texture2D" uid="uid://bp3nlp7g7vg7t" path="res://Asssets/Textures/Office/Map/Camera Button Colors.png" id="1_tj22x"]
+[ext_resource type="Theme" uid="uid://cxfm46dyn823d" path="res://Asssets/Theme/Text.tres" id="2_csy1p"]
+[ext_resource type="FontFile" uid="uid://t5poni6udcrx" path="res://Asssets/Fonts/LcdSolid-VPzB.ttf" id="3_csy1p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj22x"]
+atlas = ExtResource("1_tj22x")
+region = Rect2(61, 0, 59, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csy1p"]
+atlas = ExtResource("1_tj22x")
+region = Rect2(1, 0, 59, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb2ps"]
+atlas = ExtResource("1_tj22x")
+region = Rect2(1, 0, 59, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_poabo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj22x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csy1p")
+}],
+"loop": true,
+"name": &"Selected",
+"speed": 1.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yb2ps")
+}],
+"loop": true,
+"name": &"Unselected",
+"speed": 5.0
+}]
+
+[node name="Cam Button" type="AnimatedSprite2D" unique_id=211531805]
+sprite_frames = SubResource("SpriteFrames_poabo")
+animation = &"Unselected"
+centered = false
+
+[node name="Button" type="Button" parent="." unique_id=1044140112]
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -41.0
+offset_bottom = 3.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+theme = ExtResource("2_csy1p")
+theme_override_fonts/font = ExtResource("3_csy1p")
+theme_override_font_sizes/font_size = 17
+text = "CAM
+test"
+flat = true
+alignment = 0

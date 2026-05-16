@@ -57,6 +57,7 @@
 [ext_resource type="Texture2D" uid="uid://c2v4xl3ry542f" path="res://Asssets/Textures/Locations/East Hall/546.png" id="55_srs6g"]
 [ext_resource type="Texture2D" uid="uid://b738mnp4ffkmm" path="res://Asssets/Textures/Locations/East Hall/554.png" id="56_u4aa0"]
 [ext_resource type="Texture2D" uid="uid://cap7mj6jt2o55" path="res://Asssets/Textures/Locations/Pirate Cove/66.png" id="57_l1ibl"]
+[ext_resource type="Texture2D" uid="uid://cuvbke7qb4uww" path="res://Asssets/Textures/Locations/Kitchen/83.png" id="58_0s6kd"]
 [ext_resource type="Texture2D" uid="uid://cnqanu5r0bv3v" path="res://Asssets/Textures/Locations/Pirate Cove/211.png" id="58_qguty"]
 [ext_resource type="Texture2D" uid="uid://cr0hn13wl3eja" path="res://Asssets/Textures/Locations/Pirate Cove/240.png" id="59_0s6kd"]
 [ext_resource type="Texture2D" uid="uid://bsdexpfu6yae0" path="res://Asssets/Textures/Locations/Pirate Cove/338.png" id="60_84xsd"]
@@ -129,6 +130,28 @@
 [ext_resource type="Texture2D" uid="uid://mikoemteruuf" path="res://Asssets/Textures/Other/Boreder.jpg" id="123_706w8"]
 [ext_resource type="Texture2D" uid="uid://deyodhswbrigh" path="res://Asssets/Textures/Office/Map/145.png" id="126_sfj7n"]
 [ext_resource type="Texture2D" uid="uid://byqnxp0pf05y1" path="res://Asssets/Textures/Office/Map/164.png" id="127_cixny"]
+[ext_resource type="Script" uid="uid://dci2wirj6hd0m" path="res://Scenes and Code/Code/Camera Code/cams.gd" id="130_11a6c"]
+[ext_resource type="PackedScene" uid="uid://dw74ibnekgqf6" path="res://Scenes and Code/Scenes/cam_button.tscn" id="130_423yb"]
+[ext_resource type="Texture2D" uid="uid://3355bd60ihc4" path="res://Asssets/Textures/Other/Misc/11.png" id="132_eytbm"]
+[ext_resource type="Shader" uid="uid://4hnqc00r4li6" path="res://Scenes and Code/Scenes/Remove Grey.gdshader" id="132_i56tc"]
+[ext_resource type="Texture2D" uid="uid://c6mpe6qdt8twu" path="res://Asssets/Textures/Static/4.png" id="133_4ykdc"]
+[ext_resource type="Texture2D" uid="uid://d3fr8g0h0v73b" path="res://Asssets/Textures/Locations/Names/71.png" id="133_w80um"]
+[ext_resource type="Texture2D" uid="uid://cnpv4qe8elobo" path="res://Asssets/Textures/Static/25.png" id="134_4b8di"]
+[ext_resource type="Texture2D" uid="uid://chk0uc4a1juf2" path="res://Asssets/Textures/Locations/Names/72.png" id="134_kuees"]
+[ext_resource type="Texture2D" uid="uid://u6ntw7snkvu4" path="res://Asssets/Textures/Locations/Names/79.png" id="135_oeys7"]
+[ext_resource type="Texture2D" uid="uid://bvrsqvqbe6jtb" path="res://Asssets/Textures/Locations/Names/75.png" id="136_3e2xa"]
+[ext_resource type="Texture2D" uid="uid://brps178w1spc1" path="res://Asssets/Textures/Static/8.png" id="136_t3pr8"]
+[ext_resource type="Texture2D" uid="uid://dj3woae7ed8rm" path="res://Asssets/Textures/Locations/Names/78.png" id="137_22xbg"]
+[ext_resource type="Texture2D" uid="uid://0u5olqam7amx" path="res://Asssets/Textures/Locations/Names/70.png" id="138_m8au0"]
+[ext_resource type="Texture2D" uid="uid://b4tjb6yvbfwru" path="res://Asssets/Textures/Static/10.png" id="138_w80um"]
+[ext_resource type="Texture2D" uid="uid://dbcl5pk0irfnm" path="res://Asssets/Textures/Locations/Names/77.png" id="139_26bwk"]
+[ext_resource type="Texture2D" uid="uid://cis12jr2hbyw6" path="res://Asssets/Textures/Static/21.png" id="139_kuees"]
+[ext_resource type="AudioStream" uid="uid://cp1gtguks7ap2" path="res://Asssets/Audio/blip3.wav" id="139_l1ibl"]
+[ext_resource type="Texture2D" uid="uid://bel1b4thbno7s" path="res://Asssets/Textures/Static/22.png" id="140_oeys7"]
+[ext_resource type="Texture2D" uid="uid://be45bqfqfbq2a" path="res://Asssets/Textures/Locations/Names/50.png" id="140_ubw4d"]
+[ext_resource type="Texture2D" uid="uid://da4qpeggu1caq" path="res://Asssets/Textures/Locations/Names/54.png" id="141_cmoux"]
+[ext_resource type="Texture2D" uid="uid://c43rcf5k3t13u" path="res://Asssets/Textures/Locations/Names/74.png" id="142_6ttvt"]
+[ext_resource type="Texture2D" uid="uid://dpdu7jv0hs6ms" path="res://Asssets/Textures/Locations/Names/76.png" id="143_eodv1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648li"]
 animations = [{
@@ -590,6 +613,13 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_648li"]
+shader = ExtResource("28_mhlup")
+shader_parameter/zoom = 75
+shader_parameter/smoothed = true
+shader_parameter/vertical = false
+shader_parameter/noWrap = true
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02j8i"]
 size = Vector2(565, 747)
 
@@ -743,6 +773,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"EHC f",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58_0s6kd")
+}],
+"loop": true,
+"name": &"Kitchen",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1195,12 +1233,136 @@ animations = [{
 "speed": 1.5
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_648li"]
-shader = ExtResource("28_mhlup")
-shader_parameter/zoom = 75
-shader_parameter/smoothed = true
-shader_parameter/vertical = false
-shader_parameter/noWrap = true
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gi6kq"]
+shader = ExtResource("132_i56tc")
+shader_parameter/threshold = 0.1
+shader_parameter/alpha = 1.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qvkig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("133_w80um")
+}],
+"loop": true,
+"name": &"BS",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("134_kuees")
+}],
+"loop": true,
+"name": &"DH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("135_oeys7")
+}],
+"loop": true,
+"name": &"EH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("136_3e2xa")
+}],
+"loop": true,
+"name": &"EHC",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("137_22xbg")
+}],
+"loop": true,
+"name": &"Kitchen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("138_m8au0")
+}],
+"loop": true,
+"name": &"Pirate Cove",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("139_26bwk")
+}],
+"loop": true,
+"name": &"RR",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("140_ubw4d")
+}],
+"loop": true,
+"name": &"SC",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("141_cmoux")
+}],
+"loop": true,
+"name": &"SS",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("142_6ttvt")
+}],
+"loop": true,
+"name": &"WH",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("143_eodv1")
+}],
+"loop": true,
+"name": &"WHC",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eodv1"]
+shader = ExtResource("108_r8eio")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gi6kq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("132_eytbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_4ykdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_4b8di")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_t3pr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_w80um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_kuees")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_oeys7")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="Office" type="Node2D" unique_id=1990627701]
 script = ExtResource("1_j7ir8")
@@ -1366,6 +1528,17 @@ rotation = 3.1415927
 scale = Vector2(1, -1)
 stream = ExtResource("26_20mcf")
 
+[node name="Perspective Filter" type="CanvasLayer" parent="." unique_id=755965232]
+
+[node name="ColorRect" type="ColorRect" parent="Perspective Filter" unique_id=20036079]
+material = SubResource("ShaderMaterial_648li")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1066620187]
 anchor_mode = 0
 script = ExtResource("8_bgo8m")
@@ -1426,7 +1599,7 @@ visible = false
 
 [node name="Camera View" type="AnimatedSprite2D" parent="Camera2D/Camera System" unique_id=62531452]
 sprite_frames = SubResource("SpriteFrames_fhw4a")
-animation = &"BS b"
+animation = &"SS"
 centered = false
 script = ExtResource("115_cixny")
 
@@ -1462,25 +1635,28 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -95.99999
-offset_top = -56.000004
-offset_right = -96.0
-offset_bottom = -56.0
+offset_top = -43.0
+offset_right = -94.260864
+offset_bottom = -66.47827
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.15, 1.15)
 texture = ExtResource("123_706w8")
 
-[node name="Recording Dot" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects" unique_id=1101049466]
+[node name="Camera UI" type="Node2D" parent="Camera2D/Camera System/Camera Effects" unique_id=1530335269]
+script = ExtResource("130_11a6c")
+
+[node name="Recording Dot" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1101049466]
 material = SubResource("ShaderMaterial_olakv")
 position = Vector2(104, 72)
 sprite_frames = SubResource("SpriteFrames_qoaa0")
 autoplay = "default"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Camera2D/Camera System/Camera Effects/Recording Dot" unique_id=1088693507]
-root_node = NodePath("../../../../..")
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Camera2D/Camera System/Camera Effects/Camera UI/Recording Dot" unique_id=1088693507]
+root_node = NodePath("../../../../../..")
 libraries/ = SubResource("AnimationLibrary_khudq")
 
-[node name="Map" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects" unique_id=916491849]
+[node name="Map" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=916491849]
 material = SubResource("ShaderMaterial_423yb")
 position = Vector2(1019, 485)
 sprite_frames = SubResource("SpriteFrames_11a6c")
@@ -1488,16 +1664,55 @@ animation = &"Cameraless"
 autoplay = "Cameraless"
 frame_progress = 0.4397998
 
-[node name="Perspective Filter" type="CanvasLayer" parent="." unique_id=755965232]
+[node name="Location Names" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=686509039]
+modulate = Color(0.91905445, 0.91905445, 0.9190543, 1)
+material = SubResource("ShaderMaterial_gi6kq")
+position = Vector2(1016, 288)
+sprite_frames = SubResource("SpriteFrames_qvkig")
+animation = &"SS"
 
-[node name="ColorRect" type="ColorRect" parent="Perspective Filter" unique_id=20036079]
-material = SubResource("ShaderMaterial_648li")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="Cam 1A" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1044140112 instance=ExtResource("130_423yb")]
+position = Vector2(926, 305)
+
+[node name="Cam 1B" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=211531805 instance=ExtResource("130_423yb")]
+position = Vector2(902, 361)
+
+[node name="Cam 1C" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=723184979 instance=ExtResource("130_423yb")]
+position = Vector2(870, 434)
+
+[node name="Cam 2A" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1343383855 instance=ExtResource("130_423yb")]
+position = Vector2(897, 553)
+
+[node name="Cam 2B" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=751447436 instance=ExtResource("130_423yb")]
+position = Vector2(896, 599)
+
+[node name="Cam 3" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=517990524 instance=ExtResource("130_423yb")]
+position = Vector2(833, 521)
+
+[node name="Cam 4A" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=2104291557 instance=ExtResource("130_423yb")]
+position = Vector2(1041, 553)
+
+[node name="Cam 4B" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1767620395 instance=ExtResource("130_423yb")]
+position = Vector2(1041, 599)
+
+[node name="Cam 5" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=781375554 instance=ExtResource("130_423yb")]
+position = Vector2(798, 385)
+
+[node name="Cam 6" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=621079736 instance=ExtResource("130_423yb")]
+position = Vector2(1121, 519)
+
+[node name="Cam 7" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1704228541 instance=ExtResource("130_423yb")]
+position = Vector2(1134, 394)
+
+[node name="Blip Flash" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=2071409922]
+material = SubResource("ShaderMaterial_eodv1")
+sprite_frames = SubResource("SpriteFrames_gi6kq")
+frame = 7
+frame_progress = 1.0
+centered = false
+
+[node name="Swap Sound" type="AudioStreamPlayer2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=6930893]
+stream = ExtResource("139_l1ibl")
 
 [connection signal="pressed" from="Fred\'s Nose" to="Fred\'s Nose" method="_on_pressed"]
 [connection signal="mouse_entered" from="GUI/Cam Arrow/Cam Collision" to="." method="_on_cam_collision_mouse_entered"]
