@@ -17,8 +17,15 @@ var possible_cam
 @export_group("Camera Settings")
 @export var current_cam = "SS"
 @export var fpos = "SS"
-@export var bpos = "BS"
+@export var bpos = "SS"
 @export var cpos = "SS"
+@export var foxpos = "Pirate Cove"
+
+@export_group("Animatronic AI Level")
+@export var bonnie_level : int = 20
+@export var chica_level : int = 20
+@export var freddy_level : int = 10
+@export var foxy_level : int = 0
 
 
 func _ready() -> void:
