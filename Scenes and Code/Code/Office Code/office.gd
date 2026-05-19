@@ -88,15 +88,25 @@ func office_door_sprite_call(door_open, button_pressed):
 
 
 func office_lights_sprite_call():
+	var flicker_chance = randi_range(1, 10)
+	
 	#simple function for keeping the office lights updated based on the light pressed
 	#if side has light pressed, light that side, if it doesn't then dont
-	if left_buttons.light_pressed:
-		left_side.frame = 1
+	if left_buttons.light_pressed and flicker_chance != 1:
+		if Global.fpos == "blindspot":
+			left_side.frame = 3
+		elif Global.bpos == "blindspot":
+			left_side.frame = 2
+		else:
+			left_side.frame = 1
 	else:
 		left_side.frame = 0
 	
-	if right_buttons.light_pressed:
-		right_side.frame = 1
+	if right_buttons.light_pressed and flicker_chance != 1:
+		if Global.cpos == "blindspot":
+			right_side.frame = 2
+		else:
+			right_side.frame = 1
 	else:
 		right_side.frame = 0
 

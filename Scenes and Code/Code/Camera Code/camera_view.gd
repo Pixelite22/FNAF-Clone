@@ -23,7 +23,8 @@ func _process(delta: float) -> void:
 	handle_view(Global.current_cam)
 
 func handle_view(view : String):
-	var target_view
+	if "Kitchen" in view:
+		view = "Kitchen"
 	for animname in sprite_frames.get_animation_names():
 		if animname == view:
 			animation = animatronic_display(view)
@@ -55,26 +56,28 @@ func animatronic_display(view : String):
 		else: #and if all are gone, 
 			view = view #set view to view
 	
-	if view != animation:
-		anim_swap = true
-	else:
-		anim_swap = false
+	if view != animation: #if the view isn't actually the animation being shown
+		anim_swap = true #set the animation swap boolean to true
+	else: #otherwise
+		anim_swap = false #set it to false
 	
-	return view
+	return view #return the new view
 
-func frame_selector(anim_name):
-	if anim_name in secret_or_progress:
-		if secret_or_progress[anim_name] == "secret":
+#this will select the frame within the animation
+func frame_selector(anim_name): 
+	if anim_name in secret_or_progress:#if the animation is in the secret or progress dictionary
+		if secret_or_progress[anim_name] == "secret": #And is a secret animation
 			#var option = randi_range(0, 10)
 			#print(option)
 			#if option == 0:
-			if randi_range(0, 10) == 0:
+			if randi_range(0, 10) == 0: #randomly select a number 0-10, and if the number is 0
 				print("Rare screen reached!")
-				return randi_range(1, sprite_frames.get_frame_count(anim_name))
-			else:
+				return randi_range(1, sprite_frames.get_frame_count(anim_name)) #show a random secret screen within the animations library
+			else: #if the number is anything but 0
 				print("Normal Screen")
-				return 0
-		else:
+				return 0 #return the basic screen stored at frame 0
+		else: #and if the animation isn't a secret
+			#show the basic screen
 			return 0 ##MUST CHANGE LATER WHEN WE ADD ANIMATRONIC FUNCTIONALITY
-	else:
-		return 0
+	else: #and if the animation isn't in the dictionary at all
+		return 0 #return the (most likely only) frame in the library

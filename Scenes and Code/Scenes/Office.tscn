@@ -130,6 +130,7 @@
 [ext_resource type="Texture2D" uid="uid://mikoemteruuf" path="res://Asssets/Textures/Other/Boreder.jpg" id="123_706w8"]
 [ext_resource type="Texture2D" uid="uid://deyodhswbrigh" path="res://Asssets/Textures/Office/Map/145.png" id="126_sfj7n"]
 [ext_resource type="Texture2D" uid="uid://byqnxp0pf05y1" path="res://Asssets/Textures/Office/Map/164.png" id="127_cixny"]
+[ext_resource type="Texture2D" uid="uid://c0ulqkfga1218" path="res://Asssets/Textures/Text/camera disabled.png" id="128_w80um"]
 [ext_resource type="Script" uid="uid://dci2wirj6hd0m" path="res://Scenes and Code/Code/Camera Code/cams.gd" id="130_11a6c"]
 [ext_resource type="PackedScene" uid="uid://dw74ibnekgqf6" path="res://Scenes and Code/Scenes/cam_button.tscn" id="130_423yb"]
 [ext_resource type="Texture2D" uid="uid://3355bd60ihc4" path="res://Asssets/Textures/Other/Misc/11.png" id="132_eytbm"]
@@ -152,6 +153,8 @@
 [ext_resource type="Texture2D" uid="uid://da4qpeggu1caq" path="res://Asssets/Textures/Locations/Names/54.png" id="141_cmoux"]
 [ext_resource type="Texture2D" uid="uid://c43rcf5k3t13u" path="res://Asssets/Textures/Locations/Names/74.png" id="142_6ttvt"]
 [ext_resource type="Texture2D" uid="uid://dpdu7jv0hs6ms" path="res://Asssets/Textures/Locations/Names/76.png" id="143_eodv1"]
+[ext_resource type="Script" uid="uid://c17s8nwpv6fg3" path="res://Scenes and Code/Scenes/animatronic_ai.gd" id="154_kuees"]
+[ext_resource type="Script" uid="uid://bfkp245jpqqlw" path="res://Scenes and Code/Scenes/debug_info.gd" id="155_oeys7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648li"]
 animations = [{
@@ -220,97 +223,6 @@ animations = [{
 "name": &"default",
 "speed": 30.0
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_01ig6"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(5, 4, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tn2t8"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(1286, 4, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2f03o"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(2567, 4, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6qdri"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(3848, 4, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s5oa0"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(5, 726, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_teq6o"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(1286, 726, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5dcr"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(2567, 726, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcq8s"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(3848, 726, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qribw"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(5, 1448, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lh5ql"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(1286, 1448, 1280, 720)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xkyd"]
-atlas = ExtResource("18_yqm2c")
-region = Rect2(2567, 1448, 1280, 720)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tbd28"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_01ig6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tn2t8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2f03o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6qdri")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5oa0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_teq6o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5dcr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jcq8s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qribw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lh5ql")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5xkyd")
-}],
-"loop": false,
-"name": &"default",
-"speed": 30.0
-}]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xd74"]
-shader = ExtResource("108_r8eio")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_648li"]
-size = Vector2(599, 145)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0ni12"]
 animations = [{
@@ -619,6 +531,97 @@ shader_parameter/zoom = 75
 shader_parameter/smoothed = true
 shader_parameter/vertical = false
 shader_parameter/noWrap = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01ig6"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(5, 4, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn2t8"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(1286, 4, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f03o"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(2567, 4, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qdri"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(3848, 4, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5oa0"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(5, 726, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teq6o"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(1286, 726, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5dcr"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(2567, 726, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcq8s"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(3848, 726, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qribw"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(5, 1448, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh5ql"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(1286, 1448, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xkyd"]
+atlas = ExtResource("18_yqm2c")
+region = Rect2(2567, 1448, 1280, 720)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tbd28"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01ig6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn2t8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f03o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qdri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5oa0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teq6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5dcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcq8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qribw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lh5ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xkyd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1xd74"]
+shader = ExtResource("108_r8eio")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_648li"]
+size = Vector2(599, 145)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02j8i"]
 size = Vector2(565, 747)
@@ -1400,41 +1403,6 @@ script = ExtResource("13_wrsl6")
 [node name="Boop Noise" type="AudioStreamPlayer2D" parent="Fred\'s Nose" unique_id=299857840]
 stream = ExtResource("13_50ixb")
 
-[node name="GUI" type="CanvasLayer" parent="." unique_id=1807855823]
-
-[node name="Camera Panel" type="AnimatedSprite2D" parent="GUI" unique_id=413845850]
-visible = false
-scale = Vector2(1.009, 1.009)
-sprite_frames = SubResource("SpriteFrames_tbd28")
-centered = false
-
-[node name="Camera Sound" type="AudioStreamPlayer2D" parent="GUI/Camera Panel" unique_id=1773599028]
-stream = ExtResource("18_sg0wm")
-
-[node name="Cam Arrow" type="TextureRect" parent="GUI" unique_id=316461724]
-modulate = Color(1, 1, 1, 0.47843137)
-material = SubResource("ShaderMaterial_1xd74")
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -79.0
-offset_right = 300.0
-offset_bottom = -19.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 2
-texture = ExtResource("17_648li")
-metadata/_edit_use_anchors_ = true
-
-[node name="Cam Collision" type="Area2D" parent="GUI/Cam Arrow" unique_id=185824932]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Cam Arrow/Cam Collision" unique_id=1021462120]
-position = Vector2(299.5, 78.5)
-shape = SubResource("RectangleShape2D_648li")
-
 [node name="Left Buttons" type="AnimatedSprite2D" parent="." unique_id=1118199804]
 position = Vector2(0, 330)
 scale = Vector2(0.1, 0.1)
@@ -1539,6 +1507,41 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1807855823]
+
+[node name="Camera Panel" type="AnimatedSprite2D" parent="GUI" unique_id=413845850]
+visible = false
+scale = Vector2(1.009, 1.009)
+sprite_frames = SubResource("SpriteFrames_tbd28")
+centered = false
+
+[node name="Camera Sound" type="AudioStreamPlayer2D" parent="GUI/Camera Panel" unique_id=1773599028]
+stream = ExtResource("18_sg0wm")
+
+[node name="Cam Arrow" type="TextureRect" parent="GUI" unique_id=316461724]
+modulate = Color(1, 1, 1, 0.47843137)
+material = SubResource("ShaderMaterial_1xd74")
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -79.0
+offset_right = 300.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+texture = ExtResource("17_648li")
+metadata/_edit_use_anchors_ = true
+
+[node name="Cam Collision" type="Area2D" parent="GUI/Cam Arrow" unique_id=185824932]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Cam Arrow/Cam Collision" unique_id=1021462120]
+position = Vector2(299.5, 78.5)
+shape = SubResource("RectangleShape2D_648li")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1066620187]
 anchor_mode = 0
 script = ExtResource("8_bgo8m")
@@ -1599,7 +1602,7 @@ visible = false
 
 [node name="Camera View" type="AnimatedSprite2D" parent="Camera2D/Camera System" unique_id=62531452]
 sprite_frames = SubResource("SpriteFrames_fhw4a")
-animation = &"SS"
+animation = &"Kitchen"
 centered = false
 script = ExtResource("115_cixny")
 
@@ -1645,6 +1648,11 @@ texture = ExtResource("123_706w8")
 
 [node name="Camera UI" type="Node2D" parent="Camera2D/Camera System/Camera Effects" unique_id=1530335269]
 script = ExtResource("130_11a6c")
+
+[node name="Kitchen Text" type="Sprite2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1060491819]
+visible = false
+position = Vector2(638, 176)
+texture = ExtResource("128_w80um")
 
 [node name="Recording Dot" type="AnimatedSprite2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=1101049466]
 material = SubResource("ShaderMaterial_olakv")
@@ -1713,6 +1721,60 @@ centered = false
 
 [node name="Swap Sound" type="AudioStreamPlayer2D" parent="Camera2D/Camera System/Camera Effects/Camera UI" unique_id=6930893]
 stream = ExtResource("139_l1ibl")
+
+[node name="Animatronic AI" type="Node2D" parent="." unique_id=1991431496]
+script = ExtResource("154_kuees")
+
+[node name="Bonnie" type="Node2D" parent="Animatronic AI" unique_id=987596452]
+
+[node name="Timer" type="Timer" parent="Animatronic AI/Bonnie" unique_id=963289624]
+wait_time = 4.970000000000001
+autostart = true
+
+[node name="Chica" type="Node2D" parent="Animatronic AI" unique_id=1423608683]
+
+[node name="Timer" type="Timer" parent="Animatronic AI/Chica" unique_id=1897834316]
+wait_time = 4.98
+autostart = true
+
+[node name="Freddy" type="Node2D" parent="Animatronic AI" unique_id=279973425]
+
+[node name="Timer" type="Timer" parent="Animatronic AI/Freddy" unique_id=1678289158]
+wait_time = 3.02
+autostart = true
+
+[node name="Foxy" type="Node2D" parent="Animatronic AI" unique_id=413784827]
+
+[node name="Timer" type="Timer" parent="Animatronic AI/Foxy" unique_id=1217416223]
+wait_time = 5.010000000000001
+autostart = true
+
+[node name="Debug Info" type="CanvasLayer" parent="." unique_id=2001290515]
+script = ExtResource("155_oeys7")
+
+[node name="Freddy Location" type="Label" parent="Debug Info" unique_id=891192480]
+offset_top = 2.0
+offset_right = 162.0
+offset_bottom = 25.0
+text = "Freddy Location: N/A"
+
+[node name="Chica Location" type="Label" parent="Debug Info" unique_id=1795072213]
+offset_top = 22.0
+offset_right = 151.0
+offset_bottom = 45.0
+text = "Chica Location: N/A"
+
+[node name="Bonnie Location" type="Label" parent="Debug Info" unique_id=297359870]
+offset_top = 40.0
+offset_right = 163.0
+offset_bottom = 63.0
+text = "Bonnie Location: N/A"
+
+[node name="Foxy Location" type="Label" parent="Debug Info" unique_id=1704256298]
+offset_top = 57.0
+offset_right = 145.0
+offset_bottom = 80.0
+text = "Foxy Location: N/A"
 
 [connection signal="pressed" from="Fred\'s Nose" to="Fred\'s Nose" method="_on_pressed"]
 [connection signal="mouse_entered" from="GUI/Cam Arrow/Cam Collision" to="." method="_on_cam_collision_mouse_entered"]
