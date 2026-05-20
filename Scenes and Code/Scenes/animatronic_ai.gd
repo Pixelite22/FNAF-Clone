@@ -1,10 +1,20 @@
 extends Node2D
 
+signal cprog_change
+signal bprog_change
+signal jumpscare(who)
+
+var freddy_stage : int = 1
+@onready var foxy_stall_timer: Timer = $"Foxy/Stall Timer"
+var is_foxy_stalled : bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in get_children():
 		child.get_child(0).connect("timeout", _on_timer_timeout.bind(child.name))
+		if child.name == "Foxy":
+			child.get_child(1).connect("timeout", _on_timer_timeout.bind(child.name + " stall timeout"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +31,8 @@ func _on_timer_timeout(whomst : String):
 			fred_move()
 		"Foxy":
 			fox_move()
+		"Foxy stall timeout":
+			foxy_stall()
 
 
 #Bonnie has the most freedom of movement, having essentially two possible next steps at any given moment
@@ -37,7 +49,14 @@ func bon_move():
 			"SS":
 				Global.bpos = ["BS", "DH"].pick_random()
 			"DH":
-				Global.bpos = ["BS", "WH"].pick_random()
+				if Global.bprog == 1:
+					Global.bpos = "DH"
+					Global.bprog += 1
+					bprog_change.emit()
+				else:
+					Global.bpos = ["BS", "WH"].pick_random()
+					Global.bprog -= 1
+					bprog_change.emit()
 			"BS":
 				Global.bpos = ["DH", "WH"].pick_random()
 			"SC":
@@ -51,9 +70,9 @@ func bon_move():
 					print("Bonnie Blocked!")
 					Global.bpos = "DH"
 				else:
-					print("Jumpscared by Bonnie!")
-					#This is being left here to not break this test build
-					Global.bpos = "DH"
+					Global.bpos = "Office"
+			"Office":
+					jumpscare.emit("Bonnie")
 		print("Bonnie moved to ", Global.bpos)
 
 
@@ -72,46 +91,89 @@ func chi_move():
 			"SS":
 				Global.cpos = ["DH"].pick_random()
 			"DH":
-				Global.cpos = ["RR", "Kitchen"].pick_random()
+				if Global.cprog == 1:
+					Global.cpos = "DH"
+					Global.cprog += 1
+					cprog_change.emit()
+				else:
+					Global.cpos = ["RR", "Kitchen"].pick_random()
+					Global.cprog -= 1
+					cprog_change.emit()
 			"RR":
 				Global.cpos = ["Kitchen", "EH"].pick_random()
 			"Kitchen":
 				Global.cpos = ["RR", "EH"].pick_random()
 			"EH":
-				Global.cpos = ["DH", "EHC"].pick_random()
+				if Global.cprog == 1:
+					Global.cpos = "EH"
+					Global.cprog += 1
+					cprog_change.emit()
+				else:
+					Global.cpos = ["DH", "EHC"].pick_random()
+					Global.cprog -= 1
+					cprog_change.emit()
 			"EHC":
-				Global.cpos = ["EH", "blindspot"].pick_random() #BLINDSPOT PATH
+				if Global.cprog == 1:
+					Global.cpos = "EHC"
+					Global.cprog += 1
+					cprog_change.emit()
+				else:
+					Global.cpos = ["EH", "blindspot"].pick_random()
+					Global.cprog -= 1
+					cprog_change.emit()
 			"blindspot":
 				if Global.door_closed["Right"]:
 					print("Chica Blocked!")
 					Global.cpos = "DH"
 				else:
-					print("Jumpscared by Chica!")
-					#This is being left here to not break this test build
-					Global.cpos = "DH"
+					Global.cpos = "Office"
+			"Office":
+				jumpscare.emit("Chica")
 				#OFFICE OR DH DEPENDING ON DOOR PLACEMENT
 		print("Chica moved to ", Global.cpos)
 
 func fred_move():
-	if randi_range(1, 20) <= Global.freddy_level:
-		match Global.fpos:
-			"SS":
-				Global.fpos = "DH"
-			"DH":
-				Global.fpos = "RR"
-			"RR":
-				Global.fpos = "Kitchen"
-			"Kitchen":
-				Global.fpos = "EH"
-			"EH":
-				Global.fpos = "EHC"
-			"EHC":
-				if Global.door_closed["Right"]:
+	if randi_range(1, 20) <= Global.freddy_level and (Global.bpos != "SS" and Global.cpos != "SS"):
+		if freddy_stage == 1 or (freddy_stage == 2 and not Global.current_cam == Global.fpos):
+			match Global.fpos:
+				"SS":
+					Global.fpos = "DH"
+				"DH":
+					Global.fpos = "RR"
+				"RR":
+					Global.fpos = "Kitchen"
+				"Kitchen":
 					Global.fpos = "EH"
-				else:
-					print("Jumpscared by Freddy!")
-					Global.fpos = "EH"
-		print("Freddy moved to ", Global.fpos)
+				"EH":
+					Global.fpos = "EHC"
+				"EHC":
+					freddy_stage = 2
+					if Global.door_closed["Right"]:
+						Global.fpos = "EH"
+					else:
+						Global.fpos = "Office"
+				"Office":
+					jumpscare.emit("Freddy")
+			print("Freddy moved to ", Global.fpos)
+		else:
+			print("Freddy was camera stalled")
 
 func fox_move():
-	pass
+	if randi_range(1, 20) <= Global.foxy_level:
+		if not is_foxy_stalled and not Global.camera_menu_active:
+			if Global.foxy_stage < 3:
+				print("Foxy Stage raised to: ", Global.foxy_level)
+				Global.foxy_stage += 1
+			elif Global.foxy_stage == 3:
+				Global.foxy_stage += 1
+				Global.foxpos = "West Hall (Foxy Run)"
+
+func foxy_stall_timer_start(time):
+	if not foxy_stall_timer.is_stopped():
+		foxy_stall_timer.stop()
+	foxy_stall_timer.start(time)
+	is_foxy_stalled = true
+
+func foxy_stall():
+	print("Foxy no longer stalled")
+	is_foxy_stalled = false

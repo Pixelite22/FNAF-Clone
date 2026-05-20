@@ -66,3 +66,7 @@ func _on_button_pressed(button_pressed : AnimatedSprite2D):
 		kitchen_text.show()
 	else:
 		kitchen_text.hide()
+
+
+func _on_camera_view_animatronic_moved_active_cam() -> void:
+	blip_flash.play()
