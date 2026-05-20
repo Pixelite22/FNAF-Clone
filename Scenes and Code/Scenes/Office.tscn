@@ -1,110 +1,214 @@
 [gd_scene format=3 uid="uid://usfkbtu67iyp"]
 
 [ext_resource type="Script" uid="uid://di4ytx4it0h8m" path="res://Scenes and Code/Code/Office Code/office.gd" id="1_j7ir8"]
+[ext_resource type="Texture2D" uid="uid://bemsakv8q0gi3" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 1.png" id="2_d7wio"]
 [ext_resource type="Texture2D" uid="uid://bfbw86doklrno" path="res://Asssets/Textures/Office/Office Inside/126.png" id="2_od2lh"]
+[ext_resource type="Texture2D" uid="uid://dsa0pjcrd41ee" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 2.png" id="3_6t4gm"]
+[ext_resource type="Texture2D" uid="uid://dg7k3t33e13m1" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 3.png" id="4_pjimp"]
+[ext_resource type="Texture2D" uid="uid://5ttutx2sqbu5" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 4.png" id="5_l7ruq"]
+[ext_resource type="Texture2D" uid="uid://cagc88qle0ym0" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 5.png" id="6_bdwk4"]
 [ext_resource type="Texture2D" uid="uid://bkgtf3w41l3ak" path="res://Asssets/Textures/Office/Office Inside/304.png" id="6_f20de"]
 [ext_resource type="Texture2D" uid="uid://bldxrx2ymwc8g" path="res://Asssets/Textures/Office/Office Inside/Left Light Clear.jpg" id="6_j7ir8"]
 [ext_resource type="Texture2D" uid="uid://biwodmrsgnbsi" path="res://Asssets/Textures/Office/Office Inside/Left Light Bon.jpg" id="7_q1ttj"]
+[ext_resource type="Texture2D" uid="uid://u1njgcr1t7y4" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 6.png" id="7_x7ut5"]
 [ext_resource type="Texture2D" uid="uid://v6v71f5rq6nd" path="res://Asssets/Textures/Office/Office Inside/Left Fred.jpg" id="8_20mcf"]
+[ext_resource type="Texture2D" uid="uid://bdmep11lqqj0g" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 7.png" id="8_aahha"]
 [ext_resource type="Script" uid="uid://utjwxghe4usu" path="res://Scenes and Code/Code/Office Code/office_pov.gd" id="8_bgo8m"]
 [ext_resource type="Script" uid="uid://5oblc1akqcqo" path="res://Scenes and Code/Code/Office Code/camera_panning.gd" id="8_od2lh"]
 [ext_resource type="Texture2D" uid="uid://c8xh2rje3ming" path="res://Asssets/Textures/Office/Office Inside/Right Light Clear.jpg" id="9_vyurp"]
+[ext_resource type="Texture2D" uid="uid://1xc01ism2syp" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 8.png" id="9_yuj0n"]
+[ext_resource type="Texture2D" uid="uid://cf4tlysye22pr" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 9.png" id="10_ecxnj"]
 [ext_resource type="Texture2D" uid="uid://b7i5jsq55snqu" path="res://Asssets/Textures/Office/Fan/57.png" id="10_f20de"]
 [ext_resource type="Texture2D" uid="uid://ceryixmfd70cf" path="res://Asssets/Textures/Office/Office Inside/Right Light Chica.jpg" id="10_mhlup"]
 [ext_resource type="Texture2D" uid="uid://dqd8w46i507p3" path="res://Asssets/Textures/Office/Fan/59.png" id="11_50ixb"]
+[ext_resource type="Texture2D" uid="uid://c2j8mgjqayy0m" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 10.png" id="11_ndwoa"]
 [ext_resource type="AudioStream" uid="uid://dc20hom5oqyja" path="res://Asssets/Audio/BallastHumMedium2.wav" id="11_vyurp"]
+[ext_resource type="Texture2D" uid="uid://5kqef60fh2yi" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 11.png" id="12_75q0p"]
 [ext_resource type="Texture2D" uid="uid://b3moba0n3f4og" path="res://Asssets/Textures/Office/Fan/60.png" id="12_wrsl6"]
 [ext_resource type="AudioStream" uid="uid://chqgvarv34xjj" path="res://Asssets/Audio/PartyFavorraspyPart_AC01__3.wav" id="13_50ixb"]
+[ext_resource type="Texture2D" uid="uid://bba3h4cmk15rd" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 1.png" id="13_a5l1s"]
 [ext_resource type="Script" uid="uid://dlukp568djg0g" path="res://Scenes and Code/Code/Office Code/fred's_nose.gd" id="13_wrsl6"]
+[ext_resource type="Texture2D" uid="uid://ki3g2gnjoh5b" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 2.png" id="14_4ofge"]
 [ext_resource type="Texture2D" uid="uid://lutvu6avisc2" path="res://Asssets/Textures/Office/Door & Lights/L. Light/122.png" id="15_i2ik8"]
+[ext_resource type="Texture2D" uid="uid://4ql3hkswvv64" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 3.png" id="15_owhb1"]
 [ext_resource type="Texture2D" uid="uid://dcm2skxvvv54c" path="res://Asssets/Textures/Office/Door & Lights/L. Light/124.png" id="16_3aluu"]
+[ext_resource type="Texture2D" uid="uid://cyg5lxgx3yt5s" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 4.png" id="16_wq7rc"]
 [ext_resource type="Texture2D" uid="uid://cif7tifovhg61" path="res://Asssets/Textures/Other/420.png" id="17_648li"]
+[ext_resource type="Texture2D" uid="uid://yd33pncjcoeu" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 5.png" id="17_gfy6c"]
 [ext_resource type="Texture2D" uid="uid://bn50e0yyvktb5" path="res://Asssets/Textures/Office/Door & Lights/L. Light/125.png" id="17_i3djt"]
 [ext_resource type="AudioStream" uid="uid://d4ae4j1ybjiux" path="res://Asssets/Audio/CAMERA_VIDEO_LOA_60105303.wav" id="18_sg0wm"]
 [ext_resource type="Texture2D" uid="uid://bohcj0wa84o2a" path="res://Asssets/Textures/Office/Door & Lights/L. Light/130.png" id="18_vo13k"]
+[ext_resource type="Texture2D" uid="uid://ce6wjihlsdrfg" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 6.png" id="18_yl1mh"]
 [ext_resource type="Texture2D" uid="uid://cugxvaib3bgdr" path="res://Asssets/Textures/Office/Monitor/Camera Flip.png" id="18_yqm2c"]
 [ext_resource type="Texture2D" uid="uid://1blw1ihmv78o" path="res://Asssets/Textures/Office/Door & Lights/R. Light/134.png" id="19_0ni12"]
 [ext_resource type="Script" uid="uid://dh43snriyyq0v" path="res://Scenes and Code/Code/Office Code/door_and_light_buttons.gd" id="19_gogq7"]
+[ext_resource type="Texture2D" uid="uid://djoutflkjyo22" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 7.png" id="19_m472j"]
+[ext_resource type="Texture2D" uid="uid://s1vn0iwwym5u" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 8.png" id="20_e77ec"]
 [ext_resource type="Texture2D" uid="uid://c0dwrknsmmru4" path="res://Asssets/Textures/Office/Door & Lights/R. Light/135.png" id="20_gogq7"]
+[ext_resource type="Texture2D" uid="uid://bny5ms213eqov" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 9.png" id="21_icqw1"]
 [ext_resource type="Texture2D" uid="uid://6cor7ukyx5he" path="res://Asssets/Textures/Office/Door & Lights/R. Light/131.png" id="21_j7ir8"]
 [ext_resource type="Texture2D" uid="uid://b3lce3xx6fmyo" path="res://Asssets/Textures/Office/Door & Lights/R. Light/47.png" id="22_q1ttj"]
+[ext_resource type="Texture2D" uid="uid://4lkji6whpscr" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 10.png" id="22_xq2bs"]
+[ext_resource type="Texture2D" uid="uid://01g350qj4gfb" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 11.png" id="23_mrtgw"]
+[ext_resource type="Texture2D" uid="uid://dp3qay6ek12rt" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 12.png" id="24_5t2gk"]
+[ext_resource type="Texture2D" uid="uid://bt5mmie25hmdi" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 13.png" id="25_irrtv"]
 [ext_resource type="Texture2D" uid="uid://dyn6dqajuynih" path="res://Asssets/Textures/Office/Door & Lights/R. Door/PC _ Computer - Five Nights at Freddy's - The Office - Doors.png" id="25_q1ttj"]
 [ext_resource type="AudioStream" uid="uid://b3fmvli3utmx5" path="res://Asssets/Audio/SFXBible_12478.wav" id="26_20mcf"]
+[ext_resource type="Texture2D" uid="uid://c2nvfqdvdphsi" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 14.png" id="26_ni5rl"]
+[ext_resource type="Texture2D" uid="uid://cxu1q08iuouej" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 15.png" id="27_iute4"]
+[ext_resource type="Texture2D" uid="uid://ni2t1nj33rki" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 16.png" id="28_6gk06"]
 [ext_resource type="Shader" uid="uid://cpj3xr48jrppw" path="res://Asssets/Shaders/perspective_shader.gdshader" id="28_mhlup"]
+[ext_resource type="Texture2D" uid="uid://c2wbcjp04ohcd" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 1.png" id="29_4vdff"]
+[ext_resource type="Texture2D" uid="uid://w7pktbpk4vhy" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 2.png" id="30_mk3oo"]
+[ext_resource type="Texture2D" uid="uid://bdpyep8ssxs4n" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 3.png" id="31_dpfcy"]
 [ext_resource type="Texture2D" uid="uid://yalsnx8fft2y" path="res://Asssets/Textures/Locations/Backstage/83.png" id="32_33ljd"]
+[ext_resource type="Texture2D" uid="uid://dd1lp38g86vea" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 4.png" id="32_pnk3o"]
 [ext_resource type="Texture2D" uid="uid://blli8xwvvw7uo" path="res://Asssets/Textures/Locations/Backstage/205.png" id="33_fgfnr"]
+[ext_resource type="Texture2D" uid="uid://mi4v4j1q57yu" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 5.png" id="33_hgott"]
 [ext_resource type="Texture2D" uid="uid://d15sf8h2nywsk" path="res://Asssets/Textures/Locations/Backstage/354.png" id="34_4keld"]
+[ext_resource type="Texture2D" uid="uid://bf2dhbxoyorxv" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 6.png" id="34_ue1go"]
 [ext_resource type="Texture2D" uid="uid://c6t1rv0of2rnp" path="res://Asssets/Textures/Locations/Backstage/555.png" id="35_1xd74"]
+[ext_resource type="Texture2D" uid="uid://byyu74b1jv10p" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 7.png" id="35_8wwrq"]
+[ext_resource type="Texture2D" uid="uid://bir1sl2f8hjti" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 8.png" id="36_55jgl"]
 [ext_resource type="Texture2D" uid="uid://bpcul3xowiy6u" path="res://Asssets/Textures/Locations/Dining Hall/48.png" id="36_c53cb"]
 [ext_resource type="Texture2D" uid="uid://dqos52d8gycxc" path="res://Asssets/Textures/Locations/Dining Hall/90.png" id="37_706w8"]
+[ext_resource type="Texture2D" uid="uid://dhtnk6js6b03a" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 9.png" id="37_wmibq"]
 [ext_resource type="Texture2D" uid="uid://ikyynhhkka0w" path="res://Asssets/Textures/Locations/Dining Hall/120.png" id="38_ekqy4"]
+[ext_resource type="Texture2D" uid="uid://cscbw83n18civ" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 10.png" id="38_o0qcx"]
+[ext_resource type="Texture2D" uid="uid://e1lif7l85tnn" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 11.png" id="39_bynk1"]
 [ext_resource type="Texture2D" uid="uid://2m203i0cqghq" path="res://Asssets/Textures/Locations/Dining Hall/215.png" id="39_sfj7n"]
+[ext_resource type="Texture2D" uid="uid://bpr54fwf3ax84" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 12.png" id="40_a4s4u"]
 [ext_resource type="Texture2D" uid="uid://c7bhos4jmhhjf" path="res://Asssets/Textures/Locations/Dining Hall/222.png" id="40_cixny"]
+[ext_resource type="Texture2D" uid="uid://bt5wlxtxt8bsq" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 13.png" id="41_0fn7k"]
 [ext_resource type="Texture2D" uid="uid://bqervibjvup5k" path="res://Asssets/Textures/Locations/Dining Hall/492.png" id="41_423yb"]
+[ext_resource type="Texture2D" uid="uid://bmpqktasbxaaf" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 14.png" id="42_5di0c"]
 [ext_resource type="Texture2D" uid="uid://ckxdj6km30460" path="res://Asssets/Textures/Locations/E. Hall Corner/49.png" id="42_ma73j"]
+[ext_resource type="Texture2D" uid="uid://cab5j0lfj64sr" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 15.png" id="43_6gw0i"]
 [ext_resource type="Texture2D" uid="uid://dwxht8voyf2sh" path="res://Asssets/Textures/Locations/E. Hall Corner/220.png" id="43_c53cb"]
 [ext_resource type="Texture2D" uid="uid://dk5dvmbny06bp" path="res://Asssets/Textures/Locations/E. Hall Corner/451.png" id="44_706w8"]
+[ext_resource type="Texture2D" uid="uid://dp8dam1bhn5jo" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 16.png" id="44_dpcfs"]
+[ext_resource type="Texture2D" uid="uid://dxtaif3d5o6d2" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 17.png" id="45_1nj2h"]
 [ext_resource type="Texture2D" uid="uid://cotakli2e1pvc" path="res://Asssets/Textures/Locations/E. Hall Corner/476.png" id="45_ekqy4"]
+[ext_resource type="Texture2D" uid="uid://ceh0a5ue6wrkv" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 18.png" id="46_lnpue"]
 [ext_resource type="Texture2D" uid="uid://cuuxcphdhyt6f" path="res://Asssets/Textures/Locations/E. Hall Corner/486.png" id="46_sfj7n"]
 [ext_resource type="Texture2D" uid="uid://4u8lutjc4bc" path="res://Asssets/Textures/Locations/E. Hall Corner/549.png" id="47_cixny"]
+[ext_resource type="Texture2D" uid="uid://dfi8f078eixii" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 19.png" id="47_gdqnm"]
 [ext_resource type="Texture2D" uid="uid://dcppm54ihv3mj" path="res://Asssets/Textures/Locations/E. Hall Corner/550.png" id="48_423yb"]
+[ext_resource type="Texture2D" uid="uid://fv4otathoxe2" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 20.png" id="48_punpj"]
+[ext_resource type="Texture2D" uid="uid://1dejupo3arjk" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 21.png" id="49_7huvu"]
 [ext_resource type="Texture2D" uid="uid://bafkoi8bmqfh" path="res://Asssets/Textures/Locations/E. Hall Corner/551.png" id="49_11a6c"]
+[ext_resource type="Texture2D" uid="uid://c1w4y83np8ma3" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 22.png" id="50_cuvht"]
 [ext_resource type="Texture2D" uid="uid://xgeimcfehhjs" path="res://Asssets/Textures/Locations/E. Hall Corner/552.png" id="50_tnv8l"]
+[ext_resource type="Texture2D" uid="uid://b1d8aafscypcy" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 23.png" id="51_y8fqe"]
 [ext_resource type="Texture2D" uid="uid://o8qeqqspj01g" path="res://Asssets/Textures/Locations/East Hall/67.png" id="51_yo3x0"]
 [ext_resource type="Texture2D" uid="uid://born88e1uojfn" path="res://Asssets/Textures/Locations/East Hall/221.png" id="52_2r028"]
+[ext_resource type="Texture2D" uid="uid://vfmeaj5espej" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 24.png" id="52_3bva7"]
 [ext_resource type="Texture2D" uid="uid://bjebbpkvainob" path="res://Asssets/Textures/Locations/East Hall/226.png" id="53_qhq4h"]
+[ext_resource type="Texture2D" uid="uid://b0hppjisf6us3" path="res://Asssets/Textures/Jumpscares/foxy/jumpscare foxy 25.png" id="53_u3bus"]
 [ext_resource type="Texture2D" uid="uid://c4oeqcd088rip" path="res://Asssets/Textures/Locations/East Hall/487.png" id="54_jumdi"]
+[ext_resource type="Texture2D" uid="uid://ce1ufc5gnnl4c" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 1.png" id="54_vmumf"]
+[ext_resource type="Texture2D" uid="uid://dxscxe1whwo0e" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 2.png" id="55_eyhn1"]
 [ext_resource type="Texture2D" uid="uid://c2v4xl3ry542f" path="res://Asssets/Textures/Locations/East Hall/546.png" id="55_srs6g"]
+[ext_resource type="Texture2D" uid="uid://bxjqh2so3ytrn" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 3.png" id="56_gnvgf"]
 [ext_resource type="Texture2D" uid="uid://b738mnp4ffkmm" path="res://Asssets/Textures/Locations/East Hall/554.png" id="56_u4aa0"]
+[ext_resource type="Texture2D" uid="uid://b4mqs3pc51npt" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 4.png" id="57_16jid"]
 [ext_resource type="Texture2D" uid="uid://cap7mj6jt2o55" path="res://Asssets/Textures/Locations/Pirate Cove/66.png" id="57_l1ibl"]
 [ext_resource type="Texture2D" uid="uid://cuvbke7qb4uww" path="res://Asssets/Textures/Locations/Kitchen/83.png" id="58_0s6kd"]
+[ext_resource type="Texture2D" uid="uid://cttdwee6apqd2" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 5.png" id="58_3jev4"]
 [ext_resource type="Texture2D" uid="uid://cnqanu5r0bv3v" path="res://Asssets/Textures/Locations/Pirate Cove/211.png" id="58_qguty"]
 [ext_resource type="Texture2D" uid="uid://cr0hn13wl3eja" path="res://Asssets/Textures/Locations/Pirate Cove/240.png" id="59_0s6kd"]
+[ext_resource type="Texture2D" uid="uid://dfrqtd3uuk7s0" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 6.png" id="59_f1de6"]
 [ext_resource type="Texture2D" uid="uid://bsdexpfu6yae0" path="res://Asssets/Textures/Locations/Pirate Cove/338.png" id="60_84xsd"]
+[ext_resource type="Texture2D" uid="uid://c2e2ka50qxwf7" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 7.png" id="60_svj07"]
 [ext_resource type="Texture2D" uid="uid://qkgmyer0hwud" path="res://Asssets/Textures/Locations/Pirate Cove/553.png" id="61_0hl2s"]
+[ext_resource type="Texture2D" uid="uid://b06dbjrkxcpts" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 8.png" id="61_ks1wn"]
 [ext_resource type="Texture2D" uid="uid://clq5r6vxlpegb" path="res://Asssets/Textures/Locations/Restrooms/41.png" id="62_ip4n3"]
+[ext_resource type="Texture2D" uid="uid://cnb8cl3jg7omb" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 9.png" id="62_tfwd2"]
+[ext_resource type="Texture2D" uid="uid://bhegrtxly47c0" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 10.png" id="63_1lp36"]
 [ext_resource type="Texture2D" uid="uid://y4u7y5qvbuhu" path="res://Asssets/Textures/Locations/Restrooms/217.png" id="63_4ufl2"]
 [ext_resource type="Texture2D" uid="uid://hrlurhcm1p26" path="res://Asssets/Textures/Locations/Restrooms/219.png" id="64_4tg5s"]
+[ext_resource type="Texture2D" uid="uid://bgr3ydhlny14o" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 11.png" id="64_wydqv"]
+[ext_resource type="Texture2D" uid="uid://ck5jyp3iq08re" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 12.png" id="65_bxxwl"]
 [ext_resource type="Texture2D" uid="uid://cb1v366ewthm0" path="res://Asssets/Textures/Locations/Restrooms/494.png" id="65_eytbm"]
 [ext_resource type="Texture2D" uid="uid://pw5tqb8i0v1e" path="res://Asssets/Textures/Locations/Show Stage/2.png" id="66_4ykdc"]
+[ext_resource type="Texture2D" uid="uid://cnj3w3m075laq" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 13.png" id="66_kwuuj"]
 [ext_resource type="Texture2D" uid="uid://j0pf2gtfoh8f" path="res://Asssets/Textures/Locations/Show Stage/19.png" id="67_4b8di"]
+[ext_resource type="Texture2D" uid="uid://2a7amu4viwm4" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 14.png" id="67_dyk54"]
 [ext_resource type="Texture2D" uid="uid://c7nog85b2d8ya" path="res://Asssets/Textures/Locations/Show Stage/68.png" id="68_oxreo"]
+[ext_resource type="Texture2D" uid="uid://qr3ygor2gf05" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 15.png" id="68_sra8c"]
+[ext_resource type="Texture2D" uid="uid://bpholbwjrx6hh" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 16.png" id="69_kv3gh"]
 [ext_resource type="Texture2D" uid="uid://c0gio3cv8qnc3" path="res://Asssets/Textures/Locations/Show Stage/223.png" id="69_t3pr8"]
+[ext_resource type="Texture2D" uid="uid://bm834qbypqgh3" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 17.png" id="70_a0lq3"]
 [ext_resource type="Texture2D" uid="uid://biiw6yrg0xloj" path="res://Asssets/Textures/Locations/Show Stage/224.png" id="70_i56tc"]
+[ext_resource type="Texture2D" uid="uid://difgaiv3ddsfj" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 18.png" id="71_am1ok"]
 [ext_resource type="Texture2D" uid="uid://c84nbtuj16mql" path="res://Asssets/Textures/Locations/Show Stage/355.png" id="71_w80um"]
+[ext_resource type="Texture2D" uid="uid://cdujdrr7pcqwa" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 19.png" id="72_46oe7"]
 [ext_resource type="Texture2D" uid="uid://d02jtqnx0p2do" path="res://Asssets/Textures/Locations/Show Stage/484.png" id="72_kuees"]
+[ext_resource type="Texture2D" uid="uid://dsed3lu1yvv23" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 20.png" id="73_be08r"]
 [ext_resource type="Texture2D" uid="uid://cqg5b1vanq6rh" path="res://Asssets/Textures/Locations/Supply Closet/62.png" id="73_oeys7"]
 [ext_resource type="Texture2D" uid="uid://fbnk5mk2k75s" path="res://Asssets/Textures/Locations/Supply Closet/190.png" id="74_3e2xa"]
+[ext_resource type="Texture2D" uid="uid://ck63ube23ih4k" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 21.png" id="74_7jop8"]
 [ext_resource type="Texture2D" uid="uid://bgaorltnatdrd" path="res://Asssets/Textures/Locations/W. Hall Corner/0.png" id="75_22xbg"]
+[ext_resource type="Texture2D" uid="uid://kmnsft1r5vib" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 22.png" id="75_jrr0r"]
+[ext_resource type="Texture2D" uid="uid://dk2ahfa1wue41" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 23.png" id="76_h5jpw"]
 [ext_resource type="Texture2D" uid="uid://bnw2miglnawfy" path="res://Asssets/Textures/Locations/W. Hall Corner/188.png" id="76_m8au0"]
 [ext_resource type="Texture2D" uid="uid://6rr08q0tdm24" path="res://Asssets/Textures/Locations/W. Hall Corner/478.png" id="77_26bwk"]
+[ext_resource type="Texture2D" uid="uid://c8fi8t5dt3m1g" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 24.png" id="77_rqvrt"]
+[ext_resource type="Texture2D" uid="uid://b2sxuqnio45wg" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 25.png" id="78_0pqxp"]
 [ext_resource type="Texture2D" uid="uid://cni0vs8y8pinp" path="res://Asssets/Textures/Locations/W. Hall Corner/479.png" id="78_ubw4d"]
 [ext_resource type="Texture2D" uid="uid://boa1o0m0rmldo" path="res://Asssets/Textures/Locations/W. Hall Corner/540.png" id="79_cmoux"]
+[ext_resource type="Texture2D" uid="uid://bsb4qdu488ocf" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 26.png" id="79_jx276"]
+[ext_resource type="Texture2D" uid="uid://dffg76b12cfxc" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 27.png" id="80_4iu3g"]
 [ext_resource type="Texture2D" uid="uid://bb7hfvo2hwn5s" path="res://Asssets/Textures/Locations/W. Hall Corner/571.png" id="80_6ttvt"]
 [ext_resource type="Texture2D" uid="uid://budjd215qiose" path="res://Asssets/Textures/Locations/West Hall/43.png" id="81_eodv1"]
+[ext_resource type="Texture2D" uid="uid://usqtklqatr2b" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 28.png" id="81_lnji5"]
+[ext_resource type="Texture2D" uid="uid://c6lps2pklj0j3" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 29.png" id="82_egle0"]
 [ext_resource type="Texture2D" uid="uid://cb2nx3f6tolqx" path="res://Asssets/Textures/Locations/West Hall/44.png" id="82_gi6kq"]
+[ext_resource type="Texture2D" uid="uid://bd8487bc2tkwu" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 30.png" id="83_4b1dq"]
 [ext_resource type="Texture2D" uid="uid://cgs6qqkhnk67q" path="res://Asssets/Textures/Locations/West Hall/206.png" id="83_qvkig"]
 [ext_resource type="Texture2D" uid="uid://dt4vets0f6ofb" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/241.png" id="84_0853y"]
+[ext_resource type="Texture2D" uid="uid://cifuwpr3mbav3" path="res://Asssets/Textures/Jumpscares/freddy/jumpscare freddy 31.png" id="84_hyl1a"]
 [ext_resource type="Texture2D" uid="uid://k850defnb2ip" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/244.png" id="85_61ar0"]
+[ext_resource type="Texture2D" uid="uid://cdbclcfypx3w4" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 1.png" id="85_reh4b"]
+[ext_resource type="Texture2D" uid="uid://cwib3pk6hf1w7" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 2.png" id="86_0ofmv"]
 [ext_resource type="Texture2D" uid="uid://psxtborpy52e" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/245.png" id="86_q6y0o"]
 [ext_resource type="Texture2D" uid="uid://dtijp4211fgxg" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/246.png" id="87_3kp3t"]
+[ext_resource type="Texture2D" uid="uid://dkyv7bfcdoygi" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 3.png" id="87_ho0ep"]
 [ext_resource type="Texture2D" uid="uid://bfkjgv8iruv60" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/247.png" id="88_3ihvx"]
+[ext_resource type="Texture2D" uid="uid://ckk8pkxurtja0" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 4.png" id="88_r32rs"]
 [ext_resource type="Texture2D" uid="uid://bmoe85vtl0v3t" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/248.png" id="89_5jjcw"]
+[ext_resource type="Texture2D" uid="uid://7jwh63hqio00" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 5.png" id="89_euvqn"]
 [ext_resource type="Texture2D" uid="uid://cpnawwoh8aiog" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/250.png" id="90_il2rk"]
+[ext_resource type="Texture2D" uid="uid://cpt6ugnfib641" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 6.png" id="90_oigo4"]
 [ext_resource type="Texture2D" uid="uid://bu5rj4be337rr" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/280.png" id="91_0vuip"]
+[ext_resource type="Texture2D" uid="uid://cjjx35idgb0gk" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 7.png" id="91_bxlrg"]
+[ext_resource type="Texture2D" uid="uid://hxokga73aqg0" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 8.png" id="92_idlvh"]
 [ext_resource type="Texture2D" uid="uid://bbjwif2s2i86k" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/282.png" id="92_jqfi4"]
 [ext_resource type="Texture2D" uid="uid://dpais5ja5kk5u" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/283.png" id="93_gqm5t"]
+[ext_resource type="Texture2D" uid="uid://d3snbliwqpyk" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 9.png" id="93_tavwd"]
 [ext_resource type="Texture2D" uid="uid://bh6616wkiasit" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/284.png" id="94_8dygt"]
+[ext_resource type="Texture2D" uid="uid://1ns7rdd8gwnq" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 10.png" id="94_kmawm"]
+[ext_resource type="Texture2D" uid="uid://1q0dkf4vleyn" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 11.png" id="95_3rrf6"]
 [ext_resource type="Texture2D" uid="uid://bsp7xqidwdne6" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/285.png" id="95_nhxky"]
 [ext_resource type="Texture2D" uid="uid://dghlqagqyslhb" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/286.png" id="96_7iev8"]
+[ext_resource type="Texture2D" uid="uid://dp62bukpjp5ag" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 12.png" id="96_afflt"]
 [ext_resource type="Texture2D" uid="uid://w8af6kmuk2lk" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/287.png" id="97_emk31"]
+[ext_resource type="Texture2D" uid="uid://ddiohwo675q53" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 13.png" id="97_tdv3a"]
+[ext_resource type="Texture2D" uid="uid://ddhbpigog86pd" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 14.png" id="98_56u5q"]
 [ext_resource type="Texture2D" uid="uid://bm8euvbsgnump" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/288.png" id="98_xw85j"]
+[ext_resource type="Texture2D" uid="uid://gyc64jn6l308" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 15.png" id="99_834tq"]
 [ext_resource type="Texture2D" uid="uid://btweaf17exquc" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/289.png" id="99_ap67o"]
+[ext_resource type="Texture2D" uid="uid://cg1gejq10jpl6" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 16.png" id="100_61qmd"]
 [ext_resource type="Texture2D" uid="uid://cbfllxs1ogviv" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/290.png" id="100_pxcqx"]
+[ext_resource type="Texture2D" uid="uid://dfoptikvr7fub" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 17.png" id="101_6nxbq"]
 [ext_resource type="Texture2D" uid="uid://b234yss0aucse" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/292.png" id="101_keuid"]
+[ext_resource type="Texture2D" uid="uid://dla8qk23lmv3o" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 18.png" id="102_4ar0u"]
 [ext_resource type="Texture2D" uid="uid://bghk0kteiltgt" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/302.png" id="102_8jin6"]
+[ext_resource type="Texture2D" uid="uid://ciaypax8xip17" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 19.png" id="103_hlbye"]
 [ext_resource type="Texture2D" uid="uid://pw25l351ty70" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/306.png" id="103_tmloo"]
+[ext_resource type="Texture2D" uid="uid://dbqadvwhosjb5" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 20.png" id="104_5fuxt"]
 [ext_resource type="Texture2D" uid="uid://btfh4a07eoypx" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/327.png" id="104_lmbyo"]
+[ext_resource type="Texture2D" uid="uid://0pdxwd52qavo" path="res://Asssets/Textures/Jumpscares/freddy power out/jumpscare freddy power out 21.png" id="105_2d0co"]
 [ext_resource type="Texture2D" uid="uid://br1ivck6wgeoq" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/329.png" id="105_cirp6"]
 [ext_resource type="Texture2D" uid="uid://dudhlfw7dtdld" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/330.png" id="106_81vc1"]
 [ext_resource type="Texture2D" uid="uid://c8bos2e5eyejl" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/331.png" id="107_qqha3"]
@@ -158,6 +262,343 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648li"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d7wio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6t4gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pjimp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l7ruq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bdwk4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x7ut5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aahha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yuj0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ecxnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ndwoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_75q0p")
+}],
+"loop": true,
+"name": &"Bonnie Jumpscare",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_a5l1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4ofge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_owhb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wq7rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gfy6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yl1mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m472j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_e77ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_icqw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xq2bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_mrtgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5t2gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_irrtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ni5rl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_iute4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_6gk06")
+}],
+"loop": true,
+"name": &"Chica Jumpscare",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_4vdff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_mk3oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_dpfcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_pnk3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_hgott")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ue1go")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_8wwrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_55jgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_wmibq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_o0qcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_bynk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_a4s4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0fn7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_5di0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_6gw0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_dpcfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_1nj2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_lnpue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_gdqnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_punpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_7huvu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_cuvht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_y8fqe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_3bva7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_u3bus")
+}],
+"loop": false,
+"name": &"Foxy Jumpscare",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_vmumf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_eyhn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_gnvgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_16jid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_3jev4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_f1de6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_svj07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ks1wn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_tfwd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_1lp36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_wydqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_bxxwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_kwuuj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_dyk54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_sra8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_kv3gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_a0lq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_am1ok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_46oe7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_be08r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_7jop8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_jrr0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_h5jpw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_rqvrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_0pqxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_jx276")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_4iu3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_lnji5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_egle0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_4b1dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_hyl1a")
+}],
+"loop": false,
+"name": &"Freddy Jumpscare",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_reh4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_0ofmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_ho0ep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_r32rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_euvqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_oigo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bxlrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_idlvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_tavwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_kmawm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_3rrf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_afflt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_tdv3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_56u5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_834tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_61qmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_6nxbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_4ar0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_hlbye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_5fuxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_2d0co")
+}],
+"loop": false,
+"name": &"Freddy Power Out Jumpscare",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_od2lh")
@@ -794,10 +1235,10 @@ animations = [{
 "texture": ExtResource("58_qguty")
 }, {
 "duration": 1.0,
-"texture": ExtResource("59_0s6kd")
+"texture": ExtResource("60_84xsd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("60_84xsd")
+"texture": ExtResource("59_0s6kd")
 }, {
 "duration": 1.0,
 "texture": ExtResource("61_0hl2s")
@@ -1602,7 +2043,7 @@ visible = false
 
 [node name="Camera View" type="AnimatedSprite2D" parent="Camera2D/Camera System" unique_id=62531452]
 sprite_frames = SubResource("SpriteFrames_fhw4a")
-animation = &"Kitchen"
+animation = &"WHC"
 centered = false
 script = ExtResource("115_cixny")
 
@@ -1749,6 +2190,9 @@ autostart = true
 wait_time = 5.010000000000001
 autostart = true
 
+[node name="Stall Timer" type="Timer" parent="Animatronic AI/Foxy" unique_id=947915411]
+one_shot = true
+
 [node name="Debug Info" type="CanvasLayer" parent="." unique_id=2001290515]
 script = ExtResource("155_oeys7")
 
@@ -1778,3 +2222,9 @@ text = "Foxy Location: N/A"
 
 [connection signal="pressed" from="Fred\'s Nose" to="Fred\'s Nose" method="_on_pressed"]
 [connection signal="mouse_entered" from="GUI/Cam Arrow/Cam Collision" to="." method="_on_cam_collision_mouse_entered"]
+[connection signal="animation_changed" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera View" method="_on_animation_changed"]
+[connection signal="animatronic_moved_active_cam" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera Effects/Camera UI" method="_on_camera_view_animatronic_moved_active_cam"]
+[connection signal="bprog_change" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_bprog_change"]
+[connection signal="cprog_change" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_cprog_change"]
+[connection signal="jumpscare" from="Animatronic AI" to="." method="jumpscare_handler"]
+[connection signal="timeout" from="Animatronic AI/Foxy/Stall Timer" to="Animatronic AI" method="_on_stall_timer_timeout"]

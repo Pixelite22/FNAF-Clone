@@ -1,26 +1,44 @@
 extends Node2D
 
+#Office Background Nodes
 @onready var officeBG: AnimatedSprite2D = $OfficeBG
 @onready var left_side: AnimatedSprite2D = $"OfficeBG/Left Side"
 @onready var right_side: AnimatedSprite2D = $"OfficeBG/Right Side"
 @onready var light_sound: AudioStreamPlayer2D = $"OfficeBG/Light Sound"
+@onready var fan: AnimatedSprite2D = $OfficeBG/Fan
+
+#Button Nodes for doors and lights
 @onready var left_buttons: AnimatedSprite2D = $"Left Buttons"
 @onready var right_buttons: AnimatedSprite2D = $"Right Buttons"
+
+#Nodes for the doors
 @onready var right_door: AnimatedSprite2D = $"Right Door"
 @onready var left_door: AnimatedSprite2D = $"Left Door"
 @onready var door_sound_l: AudioStreamPlayer2D = $"Left Door/Door Sound"
 @onready var door_sound_r: AudioStreamPlayer2D = $"Right Door/Door Sound"
+
+#GUI nodes
+@onready var gui: CanvasLayer = $GUI
 @onready var cam_arrow: TextureRect = $"GUI/Cam Arrow"
 @onready var cam_collision_shape: CollisionShape2D = $"GUI/Cam Arrow/Cam Collision/CollisionShape2D"
 @onready var cam_collision: Area2D = $"GUI/Cam Arrow/Cam Collision"
 @onready var camera_panel: AnimatedSprite2D = $"GUI/Camera Panel"
 @onready var camera_sound: AudioStreamPlayer2D = $"GUI/Camera Panel/Camera Sound"
+
+#Nodes on the camera, including the in game camera system
 @onready var camera_menu: AnimatedSprite2D = $"Camera2D/Camera System/Camera View"
 @onready var animation_player: AnimationPlayer = $"Camera2D/Camera System/Camera View/AnimationPlayer"
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var camstatic: AnimatedSprite2D = $"Camera2D/Camera System/Camera Effects/Static"
 @onready var camera_system: Node2D = $"Camera2D/Camera System"
 @onready var camera_effects: CanvasLayer = $"Camera2D/Camera System/Camera Effects"
+
+#Node for handling Animatronic AI
+@onready var animatronic_ai: Node2D = $"Animatronic AI"
+
+#More Generic variables
+var jumpscared : bool = false
+var missed_scare_opertunity = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -131,6 +149,8 @@ func _on_cam_collision_mouse_entered() -> void:
 		if Global.camera_menu_active:
 			#set that variable to false
 			Global.camera_menu_active = false
+			#Global.foxy_stalled = randf_range(0.83, 17.5)
+			animatronic_ai.foxy_stall_timer_start(randf_range(0.83, 17.5))
 		elif not Global.camera_menu_active: #but if it was false, set it to true
 			Global.camera_menu_active = true
 	
@@ -183,3 +203,25 @@ func camera_sound_handler():
 	camera_sound.play()
 	await get_tree().create_timer(1.0).timeout
 	camera_sound.stop()
+
+func jumpscare_handler(whomstve):
+	if not Global.camera_menu_active or missed_scare_opertunity >= 500:
+		jumpscared = true
+		fan.hide()
+		left_side.hide()
+		right_side.hide()
+		light_sound.stop()
+		right_door.hide()
+		left_door.hide()
+		gui.hide()
+		camera_system.hide()
+		camera_effects.hide()
+		camera_2d.position.x = ((1600/2)-(1200/2))
+		
+		
+		officeBG.animation = whomstve + " Jumpscare"
+		print("Jumpscared by ", whomstve)
+		officeBG.play()
+	else:
+		missed_scare_opertunity += 1
+		jumpscare_handler(whomstve)

@@ -18,8 +18,13 @@ var possible_cam
 @export var current_cam = "SS"
 @export var fpos = "SS"
 @export var bpos = "SS"
+@export var bprog = 1
 @export var cpos = "SS"
+@export var cprog = 1
 @export var foxpos = "Pirate Cove"
+
+@export_group("Foxy Mechanics")
+@export var foxy_stage : int = 1
 
 @export_group("Animatronic AI Level")
 @export var bonnie_level : int = 20
