@@ -2,7 +2,13 @@ extends Node2D
 
 signal cprog_change
 signal bprog_change
-signal jumpscare(who)
+signal in_office(who)
+
+@onready var btimer: Timer = $Bonnie/Timer
+@onready var ctimer: Timer = $Chica/Timer
+@onready var ftimer: Timer = $Freddy/Timer
+@onready var foxtimer: Timer = $Foxy/Timer
+
 
 var freddy_stage : int = 1
 @onready var foxy_stall_timer: Timer = $"Foxy/Stall Timer"
@@ -71,8 +77,8 @@ func bon_move():
 					Global.bpos = "DH"
 				else:
 					Global.bpos = "Office"
-			"Office":
-					jumpscare.emit("Bonnie")
+					in_office.emit("Bonnie")
+					btimer.stop()
 		print("Bonnie moved to ", Global.bpos)
 
 
@@ -113,23 +119,16 @@ func chi_move():
 					Global.cprog -= 1
 					cprog_change.emit()
 			"EHC":
-				if Global.cprog == 1:
-					Global.cpos = "EHC"
-					Global.cprog += 1
-					cprog_change.emit()
-				else:
-					Global.cpos = ["EH", "blindspot"].pick_random()
-					Global.cprog -= 1
-					cprog_change.emit()
+				Global.cpos = ["EH", "blindspot"].pick_random()
 			"blindspot":
 				if Global.door_closed["Right"]:
 					print("Chica Blocked!")
 					Global.cpos = "DH"
 				else:
 					Global.cpos = "Office"
-			"Office":
-				jumpscare.emit("Chica")
-				#OFFICE OR DH DEPENDING ON DOOR PLACEMENT
+					in_office.emit("Chica")
+					ctimer.stop()
+
 		print("Chica moved to ", Global.cpos)
 
 func fred_move():
@@ -152,8 +151,9 @@ func fred_move():
 						Global.fpos = "EH"
 					else:
 						Global.fpos = "Office"
-				"Office":
-					jumpscare.emit("Freddy")
+						in_office.emit("Freddy")
+						ftimer.stop()
+			
 			print("Freddy moved to ", Global.fpos)
 		else:
 			print("Freddy was camera stalled")
