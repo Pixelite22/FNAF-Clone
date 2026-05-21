@@ -2,9 +2,11 @@ extends AnimatedSprite2D
 
 var door_pressed : bool = false
 var light_pressed : bool = false
+var not_working : bool = false
 
 signal door_change(door_state, name_of_switch)
 signal lights_on(is_it)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,6 +16,18 @@ func _ready() -> void:
 		elif "Light" in button.name: #But if light is in the button name, 
 			button.connect("pressed", light_button_pressed) #Connect the pressed signal to the light button function
 
+func disconnect_door_button():
+	for button in get_children():
+		if "Door" in button.name:
+			button.disconnect("pressed", door_button_pressed)
+			button.connect("pressed", door_click)
+	
+	not_working = true
+
+func door_click():
+	pass
+	#enter door click sound here
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -22,6 +36,8 @@ func _process(delta: float) -> void:
 func light_switch_sprite():
 	var frame_number #define a variable for the frame number
 	var press_check = [door_pressed, light_pressed] #Define an array containing the door and light pressed variables
+	if not_working:
+		press_check[0] = false
 	match press_check: #Match this array to the following possible states it can be in
 		[false, false]: #If both the door and light aren't pressed
 			frame_number = 0 #set frame 0
@@ -36,6 +52,10 @@ func light_switch_sprite():
 
 #Door function
 func door_button_pressed():
+	if not_working:
+		print("Door Closure failed")
+		return
+	
 	if not door_pressed: #If the door is currently not pressed
 		door_pressed = true #set it to pressed
 	elif door_pressed: #But if it is pressed

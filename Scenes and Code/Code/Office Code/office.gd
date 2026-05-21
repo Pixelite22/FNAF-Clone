@@ -39,6 +39,7 @@ extends Node2D
 #More Generic variables
 var jumpscared : bool = false
 var missed_scare_opertunity = 0
+var in_office : String
 
 
 # Called when the node enters the scene tree for the first time.
@@ -185,6 +186,8 @@ func camera_handler(putting_up):
 		if camera_menu.sprite_frames.get_frame_count(camera_menu.animation) > 1:
 			camera_menu.frame = camera_menu.frame_selector(camera_menu.animation)
 	#but if we aren't putting the camera up
+	
+	
 	elif not putting_up:
 		animation_player.stop()
 		#show the panel and hide the menu, then play the panel animation backwards
@@ -194,8 +197,12 @@ func camera_handler(putting_up):
 			camera_effects.hide()
 		camera_panel.play_backwards()
 		#then wait for the animation to finish and hide the panel
+		var jumpscare_possibility = in_office
+		
 		await camera_panel.animation_finished
 		camera_panel.hide()
+		if jumpscare_possibility != "":
+			jumpscare_handler(jumpscare_possibility)
 
 
 func camera_sound_handler():
@@ -204,9 +211,18 @@ func camera_sound_handler():
 	await get_tree().create_timer(1.0).timeout
 	camera_sound.stop()
 
+func _on_animatronic_ai_in_office(who: Variant) -> void:
+	if in_office == "":
+		in_office = who
+	
+	if who == "Bonnie":
+		left_buttons.disconnect_door_button()
+	if who == "Chica" or who == "Freddy":
+		right_buttons.disconnect_door_button()
+
 func jumpscare_handler(whomstve):
 	if not Global.camera_menu_active or missed_scare_opertunity >= 500:
-		jumpscared = true
+		Global.jumpscared = true
 		fan.hide()
 		left_side.hide()
 		right_side.hide()
@@ -216,12 +232,10 @@ func jumpscare_handler(whomstve):
 		gui.hide()
 		camera_system.hide()
 		camera_effects.hide()
+		
 		camera_2d.position.x = ((1600/2)-(1200/2))
 		
 		
 		officeBG.animation = whomstve + " Jumpscare"
 		print("Jumpscared by ", whomstve)
 		officeBG.play()
-	else:
-		missed_scare_opertunity += 1
-		jumpscare_handler(whomstve)

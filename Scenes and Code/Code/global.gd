@@ -9,8 +9,7 @@ var door_closed = {
 var camera_menu_active : bool = false
 #And one for the pan speed of the office
 var office_pan = 0
-
-
+var jumpscared : bool = false
 
 var possible_cam
 
@@ -28,13 +27,17 @@ var possible_cam
 
 @export_group("Animatronic AI Level")
 @export var bonnie_level : int = 20
-@export var chica_level : int = 20
-@export var freddy_level : int = 10
+@export var chica_level : int = 0
+@export var freddy_level : int = 0
 @export var foxy_level : int = 0
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS #Make sure this script is always run so pauses to the game don't brake it
+
+func _process(delta: float) -> void:
+	if jumpscared:
+		office_pan = 0
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey: #If the player gives an input involving a key on keyboard

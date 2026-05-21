@@ -2226,5 +2226,5 @@ text = "Foxy Location: N/A"
 [connection signal="animatronic_moved_active_cam" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera Effects/Camera UI" method="_on_camera_view_animatronic_moved_active_cam"]
 [connection signal="bprog_change" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_bprog_change"]
 [connection signal="cprog_change" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_cprog_change"]
-[connection signal="jumpscare" from="Animatronic AI" to="." method="jumpscare_handler"]
+[connection signal="in_office" from="Animatronic AI" to="." method="_on_animatronic_ai_in_office"]
 [connection signal="timeout" from="Animatronic AI/Foxy/Stall Timer" to="Animatronic AI" method="_on_stall_timer_timeout"]
