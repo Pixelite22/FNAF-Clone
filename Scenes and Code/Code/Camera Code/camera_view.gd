@@ -20,11 +20,15 @@ var secret_or_progress : Dictionary = {
 	"WHC b" : "secret"
 }
 
+var fox_running : bool = false
+var run_anim_played : = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-@warning_ignore("unused_parameter")
-func _process(delta: float) -> void:
-	handle_view(Global.current_cam)
+func _process(_delta: float) -> void:
+	if Global.foxpos == "West Hall (Foxy Run)" and Global.current_cam == "WH" and Global.camera_menu_active:
+		pass
+	else:
+		handle_view(Global.current_cam)
 
 func handle_view(view : String):
 	for animname in sprite_frames.get_animation_names():
@@ -35,6 +39,8 @@ func handle_view(view : String):
 					print("Animation changed at ", view)
 					animatronic_moved_active_cam.emit()
 				frame = frame_selector(animation)
+
+
 
 func animatronic_display(view : String):
 	if view == "SS": #This if statement calls out the showstage specifically as it is the only area that can hold mulltiple animatronics
@@ -60,7 +66,6 @@ func animatronic_display(view : String):
 			view += " f" #Set fred's tag
 		else: #and if all are gone, 
 			view = view #set view to view
-	else:
 		view = view
 	
 	if view != animation: #if the view isn't actually the animation being shown
@@ -124,3 +129,32 @@ func _on_animatronic_ai_cprog_change() -> void:
 	if " c" in animation:
 		frame = frame_selector(animation)
 		animatronic_moved_active_cam.emit()
+
+#func _on_animatronic_ai_hall_run_play() -> void:
+#	print("Foxy hall run func reached")
+#	fox_running = true
+#	foxy_run_animation()
+#
+#func foxy_run_animation():
+#	if Global.current_cam == "WH": #and Global.camera_menu_active:
+#		animation = "West Hall (Foxy Run)"
+#		play()
+#		print("Animation Started")
+#		run_anim_played = true
+#		await animation_finished
+#		print("Animation Finished")
+#		stop()
+#	#elif fox_running:
+#	#	foxy_run_animation()
+
+
+func _on_camera_ui_fox_on_the_run() -> void:
+	animation = "West Hall (Foxy Run)"
+	play()
+	print("Animation Started")
+	run_anim_played = true
+	await animation_finished
+	print("Animation Finished")
+	stop()
+	animation = "WH"
+	frame = 1

@@ -3,6 +3,7 @@ extends Node2D
 signal cprog_change
 signal bprog_change
 signal in_office(who)
+signal hall_run_play
 
 @onready var btimer: Timer = $Bonnie/Timer
 @onready var ctimer: Timer = $Chica/Timer
@@ -24,7 +25,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_timer_timeout(whomst : String):
@@ -166,6 +167,8 @@ func fox_move():
 				Global.foxy_stage += 1
 			elif Global.foxy_stage == 3:
 				Global.foxy_stage += 1
+				Global.fox_on_the_run = true
+				hall_run_play.emit()
 				Global.foxpos = "West Hall (Foxy Run)"
 
 func foxy_stall_timer_start(time):

@@ -18,18 +18,25 @@ func _ready() -> void:
 
 func disconnect_door_button():
 	for button in get_children():
-		if "Door" in button.name:
+		if button.is_connected("pressed", door_button_pressed):
 			button.disconnect("pressed", door_button_pressed)
 			button.connect("pressed", door_click)
+		elif button.is_connected("pressed", light_button_pressed):
+			button.disconnect("pressed", light_button_pressed)
+			button.connect("pressed", door_click)
+		else:
+			pass
 	
 	not_working = true
 
 func door_click():
-	pass
+	for child in get_children():
+		if child is AudioStreamPlayer2D:
+			child.play()
 	#enter door click sound here
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 #Handles the sprite for the light and door switch

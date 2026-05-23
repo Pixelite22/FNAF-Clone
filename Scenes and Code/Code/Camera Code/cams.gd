@@ -1,5 +1,7 @@
 extends Node2D
 
+signal fox_on_the_run
+
 @onready var blip_flash: AnimatedSprite2D = $"Blip Flash"
 @onready var swap_sound: AudioStreamPlayer2D = $"Swap Sound"
 @onready var location_names: AnimatedSprite2D = $"Location Names"
@@ -36,7 +38,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 #when a camera button is pressed
@@ -66,6 +68,10 @@ func _on_button_pressed(button_pressed : AnimatedSprite2D):
 		kitchen_text.show()
 	else:
 		kitchen_text.hide()
+	
+	#Handle the possibility of a foxy run when switching cameras
+	if location_names.animation == "WH" and Global.foxpos == "West Hall (Foxy Run)":
+		fox_on_the_run.emit()
 
 
 func _on_camera_view_animatronic_moved_active_cam() -> void:

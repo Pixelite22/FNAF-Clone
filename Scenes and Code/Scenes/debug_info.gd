@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	freddy_location.text = "Freddy Location: " + Global.fpos
 	chica_location.text = "Chica Location: " + Global.cpos
 	bonnie_location.text = "Bonnie Location: " + Global.bpos
