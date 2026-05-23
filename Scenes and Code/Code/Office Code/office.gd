@@ -6,6 +6,9 @@ extends Node2D
 @onready var right_side: AnimatedSprite2D = $"OfficeBG/Right Side"
 @onready var light_sound: AudioStreamPlayer2D = $"OfficeBG/Light Sound"
 @onready var fan: AnimatedSprite2D = $OfficeBG/Fan
+@onready var jumpscare_sound: AudioStreamPlayer2D = $"OfficeBG/Jumpscare Sound"
+@onready var kill_timer: Timer = $"OfficeBG/Kill Timer"
+
 
 #Button Nodes for doors and lights
 @onready var left_buttons: AnimatedSprite2D = $"Left Buttons"
@@ -37,8 +40,6 @@ extends Node2D
 @onready var animatronic_ai: Node2D = $"Animatronic AI"
 
 #More Generic variables
-var jumpscared : bool = false
-var missed_scare_opertunity = 0
 var in_office : String
 
 
@@ -51,9 +52,10 @@ func _ready() -> void:
 	right_buttons.connect("lights_on", light_sound_handler)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#call the sprite call every frame to ensure the lights are displaying correctly
 	office_lights_sprite_call()
+	
 
 func office_door_sprite_call(door_open, button_pressed):
 	#find whether the left or right door button has been pressed 
@@ -165,6 +167,8 @@ func camera_handler(putting_up):
 	#call the sound function so the sound plays
 	camera_sound_handler()
 	
+	var jumpscare_possibility = in_office
+	
 	#if the camera is going up
 	if putting_up:
 		#show the camera panel and play the animation
@@ -185,9 +189,14 @@ func camera_handler(putting_up):
 		#Allow secret frames a chance to change
 		if camera_menu.sprite_frames.get_frame_count(camera_menu.animation) > 1:
 			camera_menu.frame = camera_menu.frame_selector(camera_menu.animation)
+		
+		if in_office != "":
+			kill_timer.start(randf_range(20.0, 30.0))
+		
+		if Global.foxpos == "West Hall (Foxy Run)" and Global.current_cam == "WH":
+			camera_menu._on_camera_ui_fox_on_the_run()
+	
 	#but if we aren't putting the camera up
-	
-	
 	elif not putting_up:
 		animation_player.stop()
 		#show the panel and hide the menu, then play the panel animation backwards
@@ -197,11 +206,10 @@ func camera_handler(putting_up):
 			camera_effects.hide()
 		camera_panel.play_backwards()
 		#then wait for the animation to finish and hide the panel
-		var jumpscare_possibility = in_office
 		
 		await camera_panel.animation_finished
 		camera_panel.hide()
-		if jumpscare_possibility != "":
+		if jumpscare_possibility != "" and not Global.jumpscared:
 			jumpscare_handler(jumpscare_possibility)
 
 
@@ -214,28 +222,47 @@ func camera_sound_handler():
 func _on_animatronic_ai_in_office(who: Variant) -> void:
 	if in_office == "":
 		in_office = who
+		if Global.camera_menu_active:
+			kill_timer.start(randf_range(20.0, 30.0))
 	
 	if who == "Bonnie":
 		left_buttons.disconnect_door_button()
-	if who == "Chica" or who == "Freddy":
+	if who == "Chica":
 		right_buttons.disconnect_door_button()
+	if who == "Freddy":
+		right_buttons.disconnect_door_button()
+		fred_handler()
+
+func fred_handler():
+	if randi_range(1, 4) == 1:
+		jumpscare_handler("Freddy")
+	else:
+		await get_tree().create_timer(1.0).timeout
+		fred_handler()
 
 func jumpscare_handler(whomstve):
-	if not Global.camera_menu_active or missed_scare_opertunity >= 500:
-		Global.jumpscared = true
-		fan.hide()
-		left_side.hide()
-		right_side.hide()
-		light_sound.stop()
-		right_door.hide()
-		left_door.hide()
-		gui.hide()
-		camera_system.hide()
-		camera_effects.hide()
-		
-		camera_2d.position.x = ((1600/2)-(1200/2))
-		
-		
-		officeBG.animation = whomstve + " Jumpscare"
-		print("Jumpscared by ", whomstve)
-		officeBG.play()
+	Global.jumpscared = true
+	if Global.camera_menu_active:
+		camera_handler(false)
+	fan.hide()
+	left_side.hide()
+	right_side.hide()
+	light_sound.stop()
+	right_door.hide()
+	left_door.hide()
+	gui.hide()
+	camera_system.hide()
+	camera_effects.hide()
+	
+	camera_2d.position.x = ((1600/2)-(1200/2))
+	
+	
+	officeBG.animation = whomstve + " Jumpscare"
+	print("Jumpscared by ", whomstve)
+	officeBG.play()
+	jumpscare_sound.play()
+
+
+func _on_kill_timer_timeout() -> void:
+	if not Global.jumpscared:
+		jumpscare_handler(in_office)

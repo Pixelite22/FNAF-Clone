@@ -23,5 +23,5 @@ func mouse_exited():
 			Global.office_pan -= pan_speed #Subtract it
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

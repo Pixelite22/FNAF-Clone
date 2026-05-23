@@ -24,18 +24,19 @@ var possible_cam
 
 @export_group("Foxy Mechanics")
 @export var foxy_stage : int = 1
+var fox_on_the_run : bool = false
 
 @export_group("Animatronic AI Level")
-@export var bonnie_level : int = 20
+@export var bonnie_level : int = 0
 @export var chica_level : int = 0
 @export var freddy_level : int = 0
-@export var foxy_level : int = 0
+@export var foxy_level : int = 20
 
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS #Make sure this script is always run so pauses to the game don't brake it
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if jumpscared:
 		office_pan = 0
 
