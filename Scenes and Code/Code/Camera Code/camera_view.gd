@@ -1,6 +1,9 @@
 extends AnimatedSprite2D
 
 signal animatronic_moved_active_cam
+signal jump_or_repel_fox
+signal stop_foxy_kill_timer
+
 
 var last_view
 var anim_swap
@@ -21,7 +24,8 @@ var secret_or_progress : Dictionary = {
 }
 
 var fox_running : bool = false
-var run_anim_played : = false
+var run_anim_played : bool = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -130,31 +134,19 @@ func _on_animatronic_ai_cprog_change() -> void:
 		frame = frame_selector(animation)
 		animatronic_moved_active_cam.emit()
 
-#func _on_animatronic_ai_hall_run_play() -> void:
-#	print("Foxy hall run func reached")
-#	fox_running = true
-#	foxy_run_animation()
-#
-#func foxy_run_animation():
-#	if Global.current_cam == "WH": #and Global.camera_menu_active:
-#		animation = "West Hall (Foxy Run)"
-#		play()
-#		print("Animation Started")
-#		run_anim_played = true
-#		await animation_finished
-#		print("Animation Finished")
-#		stop()
-#	#elif fox_running:
-#	#	foxy_run_animation()
-
 
 func _on_camera_ui_fox_on_the_run() -> void:
+	#if not run_anim_played:
+	stop_foxy_kill_timer.emit()
 	animation = "West Hall (Foxy Run)"
 	play()
+#	run_anim_played = true
 	print("Animation Started")
-	run_anim_played = true
 	await animation_finished
 	print("Animation Finished")
 	stop()
 	animation = "WH"
 	frame = 1
+#	run_anim_played = false
+	await get_tree().create_timer(1.5).timeout
+	jump_or_repel_fox.emit()

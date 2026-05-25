@@ -4,15 +4,20 @@ signal cprog_change
 signal bprog_change
 signal in_office(who)
 signal hall_run_play
+signal jump_or_repel_fox
+
 
 @onready var btimer: Timer = $Bonnie/Timer
 @onready var ctimer: Timer = $Chica/Timer
 @onready var ftimer: Timer = $Freddy/Timer
+#Foxy nodes
 @onready var foxtimer: Timer = $Foxy/Timer
+@onready var foxy_stall_timer: Timer = $"Foxy/Stall Timer"
+@onready var foxy_kill_timer: Timer = $"Foxy/Kill Timer"
+@onready var foxy_run: AudioStreamPlayer2D = $"Foxy/Foxy Run"
 
 
 var freddy_stage : int = 1
-@onready var foxy_stall_timer: Timer = $"Foxy/Stall Timer"
 var is_foxy_stalled : bool = false
 
 
@@ -161,22 +166,34 @@ func fred_move():
 
 func fox_move():
 	if randi_range(1, 20) <= Global.foxy_level:
-		if not is_foxy_stalled and not Global.camera_menu_active:
+		if not is_foxy_stalled and not Global.camera_menu_active and not Global.fox_on_the_run:
 			if Global.foxy_stage < 3:
-				print("Foxy Stage raised to: ", Global.foxy_level)
+				print("Foxy Stage raised to: ", Global.foxy_stage)
 				Global.foxy_stage += 1
 			elif Global.foxy_stage == 3:
+				
 				Global.foxy_stage += 1
 				Global.fox_on_the_run = true
 				hall_run_play.emit()
+				foxy_run.play()
 				Global.foxpos = "West Hall (Foxy Run)"
+				foxy_kill_timer.start()
+				await foxy_kill_timer.timeout
+				print("Foxy kill timer time out")
+				jump_or_repel_fox.emit()
 
 func foxy_stall_timer_start(time):
-	if not foxy_stall_timer.is_stopped():
-		foxy_stall_timer.stop()
-	foxy_stall_timer.start(time)
-	is_foxy_stalled = true
+	if not Global.fox_on_the_run:
+		if not foxy_stall_timer.is_stopped():
+			foxy_stall_timer.stop()
+		foxy_stall_timer.start(time)
+		is_foxy_stalled = true
 
 func foxy_stall():
 	print("Foxy no longer stalled")
 	is_foxy_stalled = false
+
+
+func _on_camera_view_stop_foxy_kill_timer() -> void:
+	print("Foxy Kill Timer stopped")
+	foxy_kill_timer.stop()

@@ -13,12 +13,15 @@ extends Node2D
 #Button Nodes for doors and lights
 @onready var left_buttons: AnimatedSprite2D = $"Left Buttons"
 @onready var right_buttons: AnimatedSprite2D = $"Right Buttons"
+@onready var blindspot_stinger_r: AudioStreamPlayer2D = $"Left Buttons/Blindspot Stinger"
+@onready var blindspot_stinger_l: AudioStreamPlayer2D = $"Right Buttons/Blindspot Stinger"
 
 #Nodes for the doors
 @onready var right_door: AnimatedSprite2D = $"Right Door"
 @onready var left_door: AnimatedSprite2D = $"Left Door"
 @onready var door_sound_l: AudioStreamPlayer2D = $"Left Door/Door Sound"
 @onready var door_sound_r: AudioStreamPlayer2D = $"Right Door/Door Sound"
+@onready var foxy_knock: AudioStreamPlayer2D = $"Left Door/Foxy Knock"
 
 #GUI nodes
 @onready var gui: CanvasLayer = $GUI
@@ -41,7 +44,8 @@ extends Node2D
 
 #More Generic variables
 var in_office : String
-
+var stinger_played_l : bool = false
+var stinger_played_r : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -50,6 +54,8 @@ func _ready() -> void:
 	right_buttons.connect("door_change", office_door_sprite_call)
 	left_buttons.connect("lights_on", light_sound_handler)
 	right_buttons.connect("lights_on", light_sound_handler)
+	left_side.connect("frame_changed", on_frame_changed.bind(left_side))
+	right_side.connect("frame_changed", on_frame_changed.bind(right_side))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -195,6 +201,7 @@ func camera_handler(putting_up):
 		
 		if Global.foxpos == "West Hall (Foxy Run)" and Global.current_cam == "WH":
 			camera_menu._on_camera_ui_fox_on_the_run()
+			Global.fox_run_checked = true
 	
 	#but if we aren't putting the camera up
 	elif not putting_up:
@@ -253,8 +260,13 @@ func jumpscare_handler(whomstve):
 	gui.hide()
 	camera_system.hide()
 	camera_effects.hide()
+	left_buttons.door_no_more()
+	right_buttons.door_no_more()
 	
-	camera_2d.position.x = ((1600/2)-(1200/2))
+	if whomstve == "Foxy":
+		camera_2d.position.x = 0
+	else:
+		camera_2d.position.x = ((1600/2)-(1200/2))
 	
 	
 	officeBG.animation = whomstve + " Jumpscare"
@@ -266,3 +278,36 @@ func jumpscare_handler(whomstve):
 func _on_kill_timer_timeout() -> void:
 	if not Global.jumpscared:
 		jumpscare_handler(in_office)
+
+
+func _on_foxy_repel() -> void:
+	#add sound effects and power options
+	foxy_knock.play()
+	Global.foxpos = "Pirate Cove"
+	Global.foxy_stage = 1
+	Global.fox_on_the_run = false
+
+
+func jump_or_repel_fox() -> void:
+	if Global.door_closed["Left"] == false:
+		jumpscare_handler("Foxy")
+	else:
+		_on_foxy_repel()
+
+
+func on_frame_changed(side : AnimatedSprite2D) -> void:
+	if "Left" in side.name:
+		if side.frame == 2 and Global.bpos != "Office":
+			if not stinger_played_l:
+				blindspot_stinger_l.play()
+				stinger_played_l = true
+		elif side.frame == 1:
+			stinger_played_l = false
+	
+	elif "Right" in side.name:
+		if side.frame == 2 and Global.bpos != "Office":
+			if not stinger_played_r:
+				blindspot_stinger_r.play()
+				stinger_played_r = true
+		elif side.frame == 1:
+			stinger_played_r = false

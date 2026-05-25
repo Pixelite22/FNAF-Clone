@@ -239,8 +239,10 @@
 [ext_resource type="Texture2D" uid="uid://c0ulqkfga1218" path="res://Asssets/Textures/Text/camera disabled.png" id="128_w80um"]
 [ext_resource type="Script" uid="uid://dci2wirj6hd0m" path="res://Scenes and Code/Code/Camera Code/cams.gd" id="130_11a6c"]
 [ext_resource type="PackedScene" uid="uid://dw74ibnekgqf6" path="res://Scenes and Code/Scenes/cam_button.tscn" id="130_423yb"]
+[ext_resource type="AudioStream" uid="uid://cagr8oafibhbl" path="res://Asssets/Audio/DOOR_POUNDING_ME_D0291401.wav" id="132_bdwk4"]
 [ext_resource type="Texture2D" uid="uid://3355bd60ihc4" path="res://Asssets/Textures/Other/Misc/11.png" id="132_eytbm"]
 [ext_resource type="Shader" uid="uid://4hnqc00r4li6" path="res://Scenes and Code/Scenes/Remove Grey.gdshader" id="132_i56tc"]
+[ext_resource type="AudioStream" uid="uid://cr7hv0281trk5" path="res://Asssets/Audio/windowscare.wav" id="132_x7ut5"]
 [ext_resource type="Texture2D" uid="uid://c6mpe6qdt8twu" path="res://Asssets/Textures/Static/4.png" id="133_4ykdc"]
 [ext_resource type="Texture2D" uid="uid://d3fr8g0h0v73b" path="res://Asssets/Textures/Locations/Names/71.png" id="133_w80um"]
 [ext_resource type="Texture2D" uid="uid://cnpv4qe8elobo" path="res://Asssets/Textures/Static/25.png" id="134_4b8di"]
@@ -261,6 +263,7 @@
 [ext_resource type="Texture2D" uid="uid://dpdu7jv0hs6ms" path="res://Asssets/Textures/Locations/Names/76.png" id="143_eodv1"]
 [ext_resource type="Script" uid="uid://c17s8nwpv6fg3" path="res://Scenes and Code/Scenes/animatronic_ai.gd" id="154_kuees"]
 [ext_resource type="Script" uid="uid://bfkp245jpqqlw" path="res://Scenes and Code/Scenes/debug_info.gd" id="155_oeys7"]
+[ext_resource type="AudioStream" uid="uid://b3014e3dxvpk6" path="res://Asssets/Audio/run.wav" id="262_x7ut5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648li"]
 animations = [{
@@ -1892,6 +1895,11 @@ position = Vector2(249.99995, 420.00024)
 scale = Vector2(0.99999994, 0.99999994)
 stream = ExtResource("124_6t4gm")
 
+[node name="Blindspot Stinger" type="AudioStreamPlayer2D" parent="Left Buttons" unique_id=413992923]
+position = Vector2(12909.999, -3299.9998)
+scale = Vector2(9.999999, 9.999999)
+stream = ExtResource("132_x7ut5")
+
 [node name="Right Buttons" type="AnimatedSprite2D" parent="." unique_id=383748800]
 position = Vector2(1502, 330)
 scale = Vector2(0.1, 0.1)
@@ -1932,6 +1940,11 @@ position = Vector2(190, 1139.9998)
 scale = Vector2(0.99999994, 0.99999994)
 stream = ExtResource("124_6t4gm")
 
+[node name="Blindspot Stinger" type="AudioStreamPlayer2D" parent="Right Buttons" unique_id=1873375333]
+position = Vector2(-2110, -3299.9998)
+scale = Vector2(9.999999, 9.999999)
+stream = ExtResource("132_x7ut5")
+
 [node name="Right Door" type="AnimatedSprite2D" parent="." unique_id=291775320]
 position = Vector2(1291, 0)
 sprite_frames = SubResource("SpriteFrames_w8a6r")
@@ -1950,9 +1963,13 @@ centered = false
 
 [node name="Door Sound" type="AudioStreamPlayer2D" parent="Left Door" unique_id=1251334601]
 position = Vector2(-990, 0)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(1, -1)
 stream = ExtResource("26_20mcf")
+
+[node name="Foxy Knock" type="AudioStreamPlayer2D" parent="Left Door" unique_id=1553264781]
+stream = ExtResource("132_bdwk4")
+pitch_scale = 1.66
 
 [node name="Perspective Filter" type="CanvasLayer" parent="." unique_id=755965232]
 
@@ -2210,6 +2227,12 @@ autostart = true
 [node name="Stall Timer" type="Timer" parent="Animatronic AI/Foxy" unique_id=947915411]
 one_shot = true
 
+[node name="Kill Timer" type="Timer" parent="Animatronic AI/Foxy" unique_id=144263434]
+wait_time = 2.0
+
+[node name="Foxy Run" type="AudioStreamPlayer2D" parent="Animatronic AI/Foxy" unique_id=1347066420]
+stream = ExtResource("262_x7ut5")
+
 [node name="Debug Info" type="CanvasLayer" parent="." unique_id=2001290515]
 script = ExtResource("155_oeys7")
 
@@ -2242,9 +2265,12 @@ text = "Foxy Location: N/A"
 [connection signal="mouse_entered" from="GUI/Cam Arrow/Cam Collision" to="." method="_on_cam_collision_mouse_entered"]
 [connection signal="animation_changed" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera View" method="_on_animation_changed"]
 [connection signal="animatronic_moved_active_cam" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera Effects/Camera UI" method="_on_camera_view_animatronic_moved_active_cam"]
+[connection signal="jump_or_repel_fox" from="Camera2D/Camera System/Camera View" to="." method="jump_or_repel_fox"]
+[connection signal="stop_foxy_kill_timer" from="Camera2D/Camera System/Camera View" to="Animatronic AI" method="_on_camera_view_stop_foxy_kill_timer"]
 [connection signal="fox_on_the_run" from="Camera2D/Camera System/Camera Effects/Camera UI" to="Camera2D/Camera System/Camera View" method="_on_camera_ui_fox_on_the_run"]
 [connection signal="bprog_change" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_bprog_change"]
 [connection signal="cprog_change" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_cprog_change"]
 [connection signal="hall_run_play" from="Animatronic AI" to="Camera2D/Camera System/Camera View" method="_on_animatronic_ai_hall_run_play"]
 [connection signal="in_office" from="Animatronic AI" to="." method="_on_animatronic_ai_in_office"]
+[connection signal="jump_or_repel_fox" from="Animatronic AI" to="." method="jump_or_repel_fox"]
 [connection signal="timeout" from="Animatronic AI/Foxy/Stall Timer" to="Animatronic AI" method="_on_stall_timer_timeout"]
