@@ -2229,6 +2229,7 @@ one_shot = true
 
 [node name="Kill Timer" type="Timer" parent="Animatronic AI/Foxy" unique_id=144263434]
 wait_time = 2.0
+one_shot = true
 
 [node name="Foxy Run" type="AudioStreamPlayer2D" parent="Animatronic AI/Foxy" unique_id=1347066420]
 stream = ExtResource("262_x7ut5")
@@ -2264,6 +2265,7 @@ text = "Foxy Location: N/A"
 [connection signal="pressed" from="Fred\'s Nose" to="Fred\'s Nose" method="_on_pressed"]
 [connection signal="mouse_entered" from="GUI/Cam Arrow/Cam Collision" to="." method="_on_cam_collision_mouse_entered"]
 [connection signal="animation_changed" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera View" method="_on_animation_changed"]
+[connection signal="animation_finished" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera View" method="_on_animation_finished"]
 [connection signal="animatronic_moved_active_cam" from="Camera2D/Camera System/Camera View" to="Camera2D/Camera System/Camera Effects/Camera UI" method="_on_camera_view_animatronic_moved_active_cam"]
 [connection signal="jump_or_repel_fox" from="Camera2D/Camera System/Camera View" to="." method="jump_or_repel_fox"]
 [connection signal="stop_foxy_kill_timer" from="Camera2D/Camera System/Camera View" to="Animatronic AI" method="_on_camera_view_stop_foxy_kill_timer"]

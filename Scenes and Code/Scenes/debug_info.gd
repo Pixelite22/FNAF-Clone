@@ -16,4 +16,4 @@ func _process(_delta: float) -> void:
 	freddy_location.text = "Freddy Location: " + Global.fpos
 	chica_location.text = "Chica Location: " + Global.cpos
 	bonnie_location.text = "Bonnie Location: " + Global.bpos
-	foxy_location.text = "Foxy Location: " + Global.foxpos + "\nFoxy Stage: " + str(Global.foxy_stage) + "\nFoxy Stalled for: " + str($"../Animatronic AI/Foxy/Stall Timer".time_left)
+	foxy_location.text = "Foxy Location: " + Global.foxpos + "\nFoxy Stage: " + str(Global.foxy_stage) + "\nFoxy Stalled for: " + str($"../Animatronic AI/Foxy/Stall Timer".time_left) + "\nFoxy Kill Timer: " + str($"../Animatronic AI/Foxy/Kill Timer".time_left)
