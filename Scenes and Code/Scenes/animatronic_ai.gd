@@ -171,14 +171,14 @@ func fox_move():
 				print("Foxy Stage raised to: ", Global.foxy_stage)
 				Global.foxy_stage += 1
 			elif Global.foxy_stage == 3:
-				
 				Global.foxy_stage += 1
 				Global.fox_on_the_run = true
 				hall_run_play.emit()
-				foxy_run.play()
 				Global.foxpos = "West Hall (Foxy Run)"
-				foxy_kill_timer.start()
+				foxy_kill_timer.start(randf_range(2, 25))
 				await foxy_kill_timer.timeout
+				foxy_run.play()
+				await foxy_run.finished
 				print("Foxy kill timer time out")
 				jump_or_repel_fox.emit()
 

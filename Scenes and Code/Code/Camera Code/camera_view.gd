@@ -4,6 +4,8 @@ signal animatronic_moved_active_cam
 signal jump_or_repel_fox
 signal stop_foxy_kill_timer
 
+signal fox_stopped
+
 
 var last_view
 var anim_swap
@@ -138,15 +140,27 @@ func _on_animatronic_ai_cprog_change() -> void:
 func _on_camera_ui_fox_on_the_run() -> void:
 	#if not run_anim_played:
 	stop_foxy_kill_timer.emit()
+	fox_running = true
+	handle_fox_run_animation()
+	await get_tree().create_timer(3.5).timeout
+	jump_or_repel_fox.emit()
+
+func handle_fox_run_animation():
 	animation = "West Hall (Foxy Run)"
 	play()
-#	run_anim_played = true
 	print("Animation Started")
-	await animation_finished
+	await fox_stopped
 	print("Animation Finished")
 	stop()
-	animation = "WH"
-	frame = 1
-#	run_anim_played = false
-	await get_tree().create_timer(1.5).timeout
-	jump_or_repel_fox.emit()
+	fox_running = false
+
+
+func _on_animation_changed() -> void:
+	if fox_running:
+		fox_stopped.emit()
+
+func _on_animation_finished() -> void:
+	if fox_running:
+		fox_stopped.emit()
+		animation = "WH"
+		frame = 1
