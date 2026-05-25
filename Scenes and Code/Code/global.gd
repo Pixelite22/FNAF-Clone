@@ -25,12 +25,13 @@ var possible_cam
 @export_group("Foxy Mechanics")
 @export var foxy_stage : int = 1
 var fox_on_the_run : bool = false
+var fox_run_checked : bool = false
 
 @export_group("Animatronic AI Level")
-@export var bonnie_level : int = 0
-@export var chica_level : int = 0
+@export var bonnie_level : int = 20
+@export var chica_level : int = 20
 @export var freddy_level : int = 0
-@export var foxy_level : int = 20
+@export var foxy_level : int = 0
 
 
 func _ready() -> void:

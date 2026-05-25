@@ -18,16 +18,26 @@ func _ready() -> void:
 
 func disconnect_door_button():
 	for button in get_children():
-		if button.is_connected("pressed", door_button_pressed):
-			button.disconnect("pressed", door_button_pressed)
-			button.connect("pressed", door_click)
-		elif button.is_connected("pressed", light_button_pressed):
-			button.disconnect("pressed", light_button_pressed)
-			button.connect("pressed", door_click)
-		else:
-			pass
+		if button.has_signal("pressed"):
+			if button.is_connected("pressed", door_button_pressed):
+				button.disconnect("pressed", door_button_pressed)
+				button.connect("pressed", door_click)
+			elif button.is_connected("pressed", light_button_pressed):
+				button.disconnect("pressed", light_button_pressed)
+				button.connect("pressed", door_click)
+			else:
+				pass
 	
 	not_working = true
+
+func door_no_more():
+	for button in get_children():
+		if button is Button:
+			if button.is_connected("pressed", door_button_pressed):
+				button.disconnect("pressed", door_button_pressed)
+			if button.is_connected("pressed", door_click):
+				button.disconnect("pressed", door_click)
+
 
 func door_click():
 	for child in get_children():
