@@ -5,6 +5,10 @@ var door_closed = {
 	"Left" : false,
 	"Right" : false
 }
+var lights_on = {
+	"Left" : false,
+	"Right" : false
+}
 #and one for whether the camera menu is up
 var camera_menu_active : bool = false
 #And one for the pan speed of the office
@@ -33,13 +37,37 @@ var fox_run_checked : bool = false
 @export var freddy_level : int = 0
 @export var foxy_level : int = 20
 
+@export_group("User Mechanics")
+@export var usage : int = 1
+@export var power : float = 999 
+
+@export_group("Other")
+@export var night : int = 1
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS #Make sure this script is always run so pauses to the game don't brake it
 
 func _process(_delta: float) -> void:
+	#if you are in a jumpscare, remove the ability to pan around the office
 	if jumpscared:
 		office_pan = 0
+	
+	power_usage(door_closed, lights_on, camera_menu_active)
+
+func power_usage(doors, lights, camera):
+	var use_counter : int = 1
+	if doors["Left"]:
+		use_counter += 1
+	if doors["Right"]:
+		use_counter += 1
+	if lights["Left"]:
+		use_counter += 1
+	if lights["Right"]:
+		use_counter += 1
+	if camera:
+		use_counter += 1
+	
+	usage = use_counter
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey: #If the player gives an input involving a key on keyboard

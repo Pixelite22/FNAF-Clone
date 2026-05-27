@@ -31,19 +31,27 @@ var run_anim_played : bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#continuously call handle_view, passing the current cam var, as long as foxy won't fuck it up
 	if Global.foxpos == "West Hall (Foxy Run)" and Global.current_cam == "WH" and Global.camera_menu_active:
 		pass
 	else:
 		handle_view(Global.current_cam)
 
 func handle_view(view : String):
+	#Loop through all the animation names in the library
 	for animname in sprite_frames.get_animation_names():
+		#if the animation matches the passed in view
 		if animname == view:
+			#set the animation correctly, making sure animtronics are shown as needed
 			animation = animatronic_display(view)
+			#if the boolian that signals the animation was swapped to a different one is true
 			if anim_swap:
+				#and the current camera is equal to the view (as long as the kitchen isn't our target
 				if Global.current_cam == view and view != "Kitchen":
 					print("Animation changed at ", view)
+					#emit the signal showing that an animatronic has moved onto, off of, or progressed through a room
 					animatronic_moved_active_cam.emit()
+				#And finally select the correct frame by passing in the animation to the frame selector
 				frame = frame_selector(animation)
 
 

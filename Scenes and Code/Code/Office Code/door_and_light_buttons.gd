@@ -16,6 +16,8 @@ func _ready() -> void:
 		elif "Light" in button.name: #But if light is in the button name, 
 			button.connect("pressed", light_button_pressed) #Connect the pressed signal to the light button function
 
+#This function disconnects the buttons from their actual function, and instead makes them play the error noise
+#Called when an animatronic makes it into the office
 func disconnect_door_button():
 	for button in get_children():
 		if button.has_signal("pressed"):
@@ -30,6 +32,8 @@ func disconnect_door_button():
 	
 	not_working = true
 
+#This makes it so the buttons literally do nothing
+#called after a jumpscare
 func door_no_more():
 	for button in get_children():
 		if button is Button:
@@ -38,7 +42,7 @@ func door_no_more():
 			if button.is_connected("pressed", door_click):
 				button.disconnect("pressed", door_click)
 
-
+#Makes the buttons play the click noise
 func door_click():
 	for child in get_children():
 		if child is AudioStreamPlayer2D:
