@@ -119,22 +119,32 @@ func office_lights_sprite_call():
 	
 	#simple function for keeping the office lights updated based on the light pressed
 	#if side has light pressed, light that side, if it doesn't then dont
-	if left_buttons.light_pressed and flicker_chance != 1:
-		if Global.fpos == "blindspot":
-			left_side.frame = 3
-		elif Global.bpos == "blindspot":
-			left_side.frame = 2
+	if left_buttons.light_pressed:
+		Global.lights_on["Left"] = true
+		if flicker_chance != 1:
+			if Global.fpos == "blindspot":
+				left_side.frame = 3
+			elif Global.bpos == "blindspot":
+				left_side.frame = 2
+			else:
+				left_side.frame = 1
 		else:
-			left_side.frame = 1
+			left_side.frame = 0
 	else:
+		Global.lights_on["Left"] = false
 		left_side.frame = 0
 	
-	if right_buttons.light_pressed and flicker_chance != 1:
-		if Global.cpos == "blindspot":
-			right_side.frame = 2
+	if right_buttons.light_pressed:
+		Global.lights_on["Right"] = true
+		if flicker_chance != 1:
+			if Global.cpos == "blindspot":
+				right_side.frame = 2
+			else:
+				right_side.frame = 1
 		else:
-			right_side.frame = 1
+			right_side.frame = 0
 	else:
+		Global.lights_on["Right"] = false
 		right_side.frame = 0
 
 func light_sound_handler(on):
@@ -196,10 +206,14 @@ func camera_handler(putting_up):
 		if camera_menu.sprite_frames.get_frame_count(camera_menu.animation) > 1:
 			camera_menu.frame = camera_menu.frame_selector(camera_menu.animation)
 		
+		#if there is an animatronic in the office
 		if in_office != "":
+			#Start the kill timer, which is between 20 and 30 seconds
 			kill_timer.start(randf_range(20.0, 30.0))
 		
+		#if foxy is in the west hall and the current camera is looking at it
 		if Global.foxpos == "West Hall (Foxy Run)" and Global.current_cam == "WH":
+			#Get that boi runnin
 			camera_menu._on_camera_ui_fox_on_the_run()
 			Global.fox_run_checked = true
 	
@@ -216,7 +230,10 @@ func camera_handler(putting_up):
 		
 		await camera_panel.animation_finished
 		camera_panel.hide()
+		
+		#Then if there is a possibility of being jumpscared and the player hasn't been already
 		if jumpscare_possibility != "" and not Global.jumpscared:
+			#jumpscare time biatches
 			jumpscare_handler(jumpscare_possibility)
 
 
@@ -226,31 +243,44 @@ func camera_sound_handler():
 	await get_tree().create_timer(1.0).timeout
 	camera_sound.stop()
 
+#This function handles the ai that snuck into the office
 func _on_animatronic_ai_in_office(who: Variant) -> void:
+	#if there is no animatronic in the office already
 	if in_office == "":
+		#Set the in_office variable to the name of the animatronic that snuck in
 		in_office = who
+		#and if the camera is active
 		if Global.camera_menu_active:
+			#Start the kill_timer
 			kill_timer.start(randf_range(20.0, 30.0))
 	
+	#Then disconnect the buttons on the side of the office the animatronic snuck in on
 	if who == "Bonnie":
 		left_buttons.disconnect_door_button()
 	if who == "Chica":
 		right_buttons.disconnect_door_button()
 	if who == "Freddy":
 		right_buttons.disconnect_door_button()
+		#This is called as freddy isn't just a one and done jumpscare like his friends
 		fred_handler()
 
 func fred_handler():
+	#There is a 1 in 4 chance that a jumpscare will actually happen
 	if randi_range(1, 4) == 1:
 		jumpscare_handler("Freddy")
+	#and if they don't jumpscare, wait a second, and recursively call back in
 	else:
 		await get_tree().create_timer(1.0).timeout
 		fred_handler()
 
+#This function handles the jumpscare for all the animatronics
 func jumpscare_handler(whomstve):
+	#set the jumpscared flag to true
 	Global.jumpscared = true
+	#and if the camera menu is active, force it down
 	if Global.camera_menu_active:
 		camera_handler(false)
+	#then hide practically all things in the office
 	fan.hide()
 	left_side.hide()
 	right_side.hide()
@@ -260,52 +290,67 @@ func jumpscare_handler(whomstve):
 	gui.hide()
 	camera_system.hide()
 	camera_effects.hide()
+	#and remove the ability to press any of the buttons at all
 	left_buttons.door_no_more()
 	right_buttons.door_no_more()
 	
+	#The following bits are just to frame the jumpscares correctly
+	#If foxy was the scarer
 	if whomstve == "Foxy":
+		#Set the camera as far left as possible
 		camera_2d.position.x = 0
 	else:
+		#Otherwise set it to the midddle of the screen
 		camera_2d.position.x = ((1600/2)-(1200/2))
 	
-	
+	#Then call the Jumpscare annimation and play it, along with the sound
 	officeBG.animation = whomstve + " Jumpscare"
 	print("Jumpscared by ", whomstve)
 	officeBG.play()
 	jumpscare_sound.play()
 
-
+#This function handles hill timer timeouts,
+#simply calling the jumpscare handler function with the proper animatronic
 func _on_kill_timer_timeout() -> void:
 	if not Global.jumpscared:
 		jumpscare_handler(in_office)
 
-
+#This handles reseting foxy when he is repeled by the door
 func _on_foxy_repel() -> void:
-	#add sound effects and power options
+	#add power options
 	foxy_knock.play()
 	Global.foxpos = "Pirate Cove"
 	Global.foxy_stage = 1
 	Global.fox_on_the_run = false
 
-
+#This function handles the determination of whether or not foxy jumpscares or is repeled
+#Simply by just... checking if the door is closed at the faithful time
 func jump_or_repel_fox() -> void:
 	if Global.door_closed["Left"] == false:
 		jumpscare_handler("Foxy")
 	else:
 		_on_foxy_repel()
 
-
+#This function, despite the generic name, is mostly to handle the stinger
+#noise that happens when an animatronic is in the blindspot
+#It takes the name of the node that it is called on in the side member var
 func on_frame_changed(side : AnimatedSprite2D) -> void:
+	#if left is in the name
 	if "Left" in side.name:
+		#and if the frame is that which contains the animatronic
+		#and that animatronic isn't already snuck into the office
 		if side.frame == 2 and Global.bpos != "Office":
+			#play the stinger if it hasn't already been played
 			if not stinger_played_l:
 				blindspot_stinger_l.play()
 				stinger_played_l = true
+		#but if the frame isn't the animatronic one, reset the played var
 		elif side.frame == 1:
 			stinger_played_l = false
 	
+	#this does the same as above but for the right side
 	elif "Right" in side.name:
-		if side.frame == 2 and Global.bpos != "Office":
+		if side.frame == 2 and Global.cpos != "Office":
 			if not stinger_played_r:
 				blindspot_stinger_r.play()
 				stinger_played_r = true

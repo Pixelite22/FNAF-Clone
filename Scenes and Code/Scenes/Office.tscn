@@ -264,6 +264,15 @@
 [ext_resource type="Script" uid="uid://c17s8nwpv6fg3" path="res://Scenes and Code/Scenes/animatronic_ai.gd" id="154_kuees"]
 [ext_resource type="Script" uid="uid://bfkp245jpqqlw" path="res://Scenes and Code/Scenes/debug_info.gd" id="155_oeys7"]
 [ext_resource type="AudioStream" uid="uid://b3014e3dxvpk6" path="res://Asssets/Audio/run.wav" id="262_x7ut5"]
+[ext_resource type="Texture2D" uid="uid://b62v3wx2r081p" path="res://Asssets/Textures/UI & Misc/usage meter 1.png" id="264_4ofge"]
+[ext_resource type="Script" uid="uid://bvi5w14awfpgo" path="res://Scenes and Code/Scenes/power.gd" id="264_wq7rc"]
+[ext_resource type="Texture2D" uid="uid://b5gcgk523a58a" path="res://Asssets/Textures/UI & Misc/usage meter 2.png" id="265_owhb1"]
+[ext_resource type="FontFile" uid="uid://t5poni6udcrx" path="res://Asssets/Fonts/LcdSolid-VPzB.ttf" id="265_wq7rc"]
+[ext_resource type="Texture2D" uid="uid://ch8w8j26p1mkg" path="res://Asssets/Textures/UI & Misc/usage meter 3.png" id="266_wq7rc"]
+[ext_resource type="Texture2D" uid="uid://cedkqgxw18sjw" path="res://Asssets/Textures/UI & Misc/usage meter 4.png" id="267_gfy6c"]
+[ext_resource type="Texture2D" uid="uid://lmjhrc73eoax" path="res://Asssets/Textures/UI & Misc/usage meter 5.png" id="268_yl1mh"]
+[ext_resource type="Texture2D" uid="uid://drpuv5idgpx1e" path="res://Asssets/Textures/Text/usage.png" id="269_m472j"]
+[ext_resource type="Texture2D" uid="uid://dy8cfumbuduq0" path="res://Asssets/Textures/Text/power left.png" id="270_e77ec"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648li"]
 animations = [{
@@ -1813,6 +1822,29 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_icqw1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("264_4ofge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_owhb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("266_wq7rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("267_gfy6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_yl1mh")
+}],
+"loop": true,
+"name": &"Display",
+"speed": 5.0
+}]
+
 [node name="Office" type="Node2D" unique_id=1990627701]
 script = ExtResource("1_j7ir8")
 
@@ -2234,6 +2266,39 @@ one_shot = true
 [node name="Foxy Run" type="AudioStreamPlayer2D" parent="Animatronic AI/Foxy" unique_id=1347066420]
 stream = ExtResource("262_x7ut5")
 
+[node name="UI" type="CanvasLayer" parent="." unique_id=666434417]
+
+[node name="Power" type="Node2D" parent="UI" unique_id=68594804]
+script = ExtResource("264_wq7rc")
+
+[node name="PowerLeft" type="Sprite2D" parent="UI/Power" unique_id=1686030432]
+position = Vector2(94, 648)
+texture = ExtResource("270_e77ec")
+
+[node name="Power Display" type="RichTextLabel" parent="UI/Power" unique_id=361058156]
+offset_left = 176.0
+offset_top = 624.0
+offset_right = 332.0
+offset_bottom = 664.0
+theme_override_fonts/normal_font = ExtResource("265_wq7rc")
+theme_override_font_sizes/normal_font_size = 39
+text = "100%"
+
+[node name="Timer" type="Timer" parent="UI/Power/Power Display" unique_id=821606049]
+autostart = true
+
+[node name="Usage" type="Sprite2D" parent="UI/Power" unique_id=1945952880]
+position = Vector2(62, 678)
+texture = ExtResource("269_m472j")
+
+[node name="Battery" type="AnimatedSprite2D" parent="UI/Power" unique_id=542328894]
+position = Vector2(160, 680)
+sprite_frames = SubResource("SpriteFrames_icqw1")
+animation = &"Display"
+frame = 4
+
+[node name="Time" type="Node2D" parent="UI" unique_id=617892766]
+
 [node name="Debug Info" type="CanvasLayer" parent="." unique_id=2001290515]
 script = ExtResource("155_oeys7")
 
@@ -2276,3 +2341,4 @@ text = "Foxy Location: N/A"
 [connection signal="in_office" from="Animatronic AI" to="." method="_on_animatronic_ai_in_office"]
 [connection signal="jump_or_repel_fox" from="Animatronic AI" to="." method="jump_or_repel_fox"]
 [connection signal="timeout" from="Animatronic AI/Foxy/Stall Timer" to="Animatronic AI" method="_on_stall_timer_timeout"]
+[connection signal="timeout" from="UI/Power/Power Display/Timer" to="UI/Power" method="_on_timer_timeout"]
