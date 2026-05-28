@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7cenryy3fe3r"]
 
 [ext_resource type="Texture2D" uid="uid://cl4blp451qspu" path="res://Asssets/Textures/Freddy Twitch/431.png" id="1_1qeyp"]
+[ext_resource type="Script" uid="uid://ks55aw45d3m2" path="res://Scenes and Code/Code/Title Screen Codes/GUI.gd" id="1_d5x53"]
 [ext_resource type="Texture2D" uid="uid://bv1fy6ftcknfb" path="res://Asssets/Textures/Freddy Twitch/440.png" id="2_506nn"]
 [ext_resource type="Texture2D" uid="uid://bu31hfstbehhx" path="res://Asssets/Textures/Freddy Twitch/441.png" id="3_0v6sd"]
 [ext_resource type="Texture2D" uid="uid://dsge3ooekvun3" path="res://Asssets/Textures/Freddy Twitch/442.png" id="4_a7wlc"]
@@ -37,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://cp1gtguks7ap2" path="res://Asssets/Audio/blip3.wav" id="34_ulrbb"]
 [ext_resource type="Script" uid="uid://csiu5xk5y1i3m" path="res://Scenes and Code/Code/Title Screen Codes/menu_button.gd" id="34_wlgw5"]
 [ext_resource type="AudioStream" uid="uid://w4e8wvthnc8p" path="res://Asssets/Audio/static.wav" id="35_aylgm"]
+[ext_resource type="Script" uid="uid://inll5e6gj78w" path="res://Scenes and Code/Code/Title Screen Codes/night_label.gd" id="35_lfgmf"]
 [ext_resource type="Texture2D" uid="uid://csuamupeh533l" path="res://Asssets/Textures/Newspaper/539.png" id="36_60gd0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v1mr1"]
@@ -340,6 +342,7 @@ animation = &"2"
 centered = false
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1812369622]
+script = ExtResource("1_d5x53")
 
 [node name="Title" type="Label" parent="GUI" unique_id=539020890]
 texture_filter = 1
@@ -357,9 +360,9 @@ Freddy's"
 [node name="New Game" type="Button" parent="GUI" unique_id=1053834921]
 texture_filter = 1
 offset_left = 132.0
-offset_top = 360.0
+offset_top = 320.0
 offset_right = 359.0
-offset_bottom = 419.0
+offset_bottom = 379.0
 theme_override_fonts/font = ExtResource("31_yp7dg")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_60gd0")
@@ -374,9 +377,9 @@ script = ExtResource("34_wlgw5")
 [node name="Continue" type="Button" parent="GUI" unique_id=958119187]
 texture_filter = 1
 offset_left = 132.0
-offset_top = 432.0
+offset_top = 392.0
 offset_right = 360.0
-offset_bottom = 491.0
+offset_bottom = 451.0
 theme_override_fonts/font = ExtResource("31_yp7dg")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_b86kg")
@@ -388,12 +391,57 @@ text = "Continue"
 flat = true
 script = ExtResource("34_wlgw5")
 
+[node name="Night Label" type="Label" parent="GUI/Continue" unique_id=1908729236]
+texture_filter = 1
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 64.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 26
+text = "Night 1"
+script = ExtResource("35_lfgmf")
+
+[node name="6th Night" type="Button" parent="GUI" unique_id=903218907]
+texture_filter = 1
+offset_left = 132.0
+offset_top = 480.0
+offset_right = 387.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("31_yp7dg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5b4pf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ryvou")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0kupu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f3tru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wl8lj")
+text = "6th Night"
+flat = true
+script = ExtResource("34_wlgw5")
+
+[node name="Custom Night" type="Button" parent="GUI" unique_id=968430168]
+texture_filter = 1
+offset_left = 132.0
+offset_top = 544.0
+offset_right = 462.0
+offset_bottom = 603.0
+theme_override_fonts/font = ExtResource("31_yp7dg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5b4pf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ryvou")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0kupu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f3tru")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wl8lj")
+text = "Custom Night"
+flat = true
+script = ExtResource("34_wlgw5")
+
 [node name="Quit Game" type="Button" parent="GUI" unique_id=730267751]
 texture_filter = 1
 offset_left = 132.0
-offset_top = 512.0
+offset_top = 616.0
 offset_right = 387.0
-offset_bottom = 571.0
+offset_bottom = 675.0
 theme_override_fonts/font = ExtResource("31_yp7dg")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5b4pf")
@@ -408,9 +456,9 @@ script = ExtResource("34_wlgw5")
 [node name="Arrow" type="Label" parent="GUI" unique_id=745684999]
 texture_filter = 1
 offset_left = 52.0
-offset_top = 360.0
+offset_top = 320.0
 offset_right = 107.0
-offset_bottom = 411.0
+offset_bottom = 371.0
 theme_override_fonts/font = ExtResource("31_yp7dg")
 theme_override_font_sizes/font_size = 50
 text = ">>"
