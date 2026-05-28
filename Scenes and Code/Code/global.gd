@@ -32,17 +32,18 @@ var fox_on_the_run : bool = false
 var fox_run_checked : bool = false
 
 @export_group("Animatronic AI Level")
-@export var bonnie_level : int = 0
-@export var chica_level : int = 0
-@export var freddy_level : int = 0
-@export var foxy_level : int = 20
+@export var bonnie_level : int = 9
+@export var chica_level : int = 8
+@export var freddy_level : int = 1
+@export var foxy_level : int = 7
 
 @export_group("User Mechanics")
 @export var usage : int = 1
 @export var power : float = 999 
+@export var hour : int = 12
 
 @export_group("Other")
-@export var night : int = 1
+@export var night : int = 2
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS #Make sure this script is always run so pauses to the game don't brake it

@@ -2,7 +2,10 @@ extends Button
 
 @onready var new_game: Button = $"."
 @onready var continuebutton: Button = $"../Continue"
+@onready var sixth_night: Button = $"../6th Night"
 @onready var quit_game: Button = $"../Quit Game"
+
+@onready var night_label: Label = $"../Continue/Night Label"
 
 @onready var arrow: Label = $"../Arrow"
 @onready var button_click: AudioStreamPlayer2D = $"../Button Click"
@@ -23,6 +26,10 @@ func mouseEntered():
 		if arrow.position.y != position.y:
 			button_click.play() #Play the button_click sound
 		arrow.position.y = position.y #set the arrow's position to the current position
+		if self == continuebutton:
+			night_label.show()
+		else:
+			night_label.hide()
 
 func mouseExited():
 	pass
@@ -41,6 +48,9 @@ func buttonPressed():
 				print("Continue Selected!") #print placeholder message
 			else:
 				pass
+		"6th Night":
+			if arrow.position.y == new_game.position.y:
+				print("6th Night Selected")
 		"Quit Game": 
 			if arrow.position.y == new_game.position.y:
 				print("Quit Game Seleceted!")
@@ -70,27 +80,3 @@ func tween_paper():
 func start_game():
 	#change the scene to the game's start night screen, as this i swhere the game starts
 	get_tree().change_scene_to_file("res://Scenes and Code/Scenes/night_start_screen.tscn")
-
-#func _input(event: InputEvent) -> void:
-#	if event is InputEventMouseButton:
-#		if event.pressed:
-#			if event.button_index == MOUSE_BUTTON_LEFT:
-#				loading = true
-#				match self.name:
-#					"New Game":
-#						if arrow.position.y == new_game.position.y:
-#							await tween_paper()
-#							start_game()
-#						else:
-#							pass
-#					"Continue": 
-#						if arrow.position.y == new_game.position.y:
-#							print("Continue Selected!")
-#						else:
-#							pass
-#					"Quit Game":
-#						if arrow.position.y == new_game.position.y:
-#							print("Quit Game Seleceted!")
-#							get_tree().quit()
-#						else:
-#							pass

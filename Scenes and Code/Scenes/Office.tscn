@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://usfkbtu67iyp"]
 
-[ext_resource type="Script" uid="uid://di4ytx4it0h8m" path="res://Scenes and Code/Code/Office Code/office.gd" id="1_j7ir8"]
+[ext_resource type="Script" uid="uid://di4ytx4it0h8m" path="res://Scenes and Code/Code/Game Code/Office Code/office.gd" id="1_j7ir8"]
 [ext_resource type="Texture2D" uid="uid://bemsakv8q0gi3" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 1.png" id="2_d7wio"]
 [ext_resource type="Texture2D" uid="uid://bfbw86doklrno" path="res://Asssets/Textures/Office/Office Inside/126.png" id="2_od2lh"]
 [ext_resource type="Texture2D" uid="uid://dsa0pjcrd41ee" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 2.png" id="3_6t4gm"]
@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://u1njgcr1t7y4" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 6.png" id="7_x7ut5"]
 [ext_resource type="Texture2D" uid="uid://v6v71f5rq6nd" path="res://Asssets/Textures/Office/Office Inside/Left Fred.jpg" id="8_20mcf"]
 [ext_resource type="Texture2D" uid="uid://bdmep11lqqj0g" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 7.png" id="8_aahha"]
-[ext_resource type="Script" uid="uid://utjwxghe4usu" path="res://Scenes and Code/Code/Office Code/office_pov.gd" id="8_bgo8m"]
-[ext_resource type="Script" uid="uid://5oblc1akqcqo" path="res://Scenes and Code/Code/Office Code/camera_panning.gd" id="8_od2lh"]
+[ext_resource type="Script" uid="uid://utjwxghe4usu" path="res://Scenes and Code/Code/Game Code/Office Code/office_pov.gd" id="8_bgo8m"]
+[ext_resource type="Script" uid="uid://5oblc1akqcqo" path="res://Scenes and Code/Code/Game Code/Office Code/camera_panning.gd" id="8_od2lh"]
 [ext_resource type="Texture2D" uid="uid://c8xh2rje3ming" path="res://Asssets/Textures/Office/Office Inside/Right Light Clear.jpg" id="9_vyurp"]
 [ext_resource type="Texture2D" uid="uid://1xc01ism2syp" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 8.png" id="9_yuj0n"]
 [ext_resource type="Texture2D" uid="uid://cf4tlysye22pr" path="res://Asssets/Textures/Jumpscares/bonnie/jumpscare bonnie 9.png" id="10_ecxnj"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b3moba0n3f4og" path="res://Asssets/Textures/Office/Fan/60.png" id="12_wrsl6"]
 [ext_resource type="AudioStream" uid="uid://chqgvarv34xjj" path="res://Asssets/Audio/PartyFavorraspyPart_AC01__3.wav" id="13_50ixb"]
 [ext_resource type="Texture2D" uid="uid://bba3h4cmk15rd" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 1.png" id="13_a5l1s"]
-[ext_resource type="Script" uid="uid://dlukp568djg0g" path="res://Scenes and Code/Code/Office Code/fred's_nose.gd" id="13_wrsl6"]
+[ext_resource type="Script" uid="uid://dlukp568djg0g" path="res://Scenes and Code/Code/Game Code/Office Code/fred's_nose.gd" id="13_wrsl6"]
 [ext_resource type="Texture2D" uid="uid://ki3g2gnjoh5b" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 2.png" id="14_4ofge"]
 [ext_resource type="Texture2D" uid="uid://lutvu6avisc2" path="res://Asssets/Textures/Office/Door & Lights/L. Light/122.png" id="15_i2ik8"]
 [ext_resource type="Texture2D" uid="uid://4ql3hkswvv64" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 3.png" id="15_owhb1"]
@@ -41,7 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://ce6wjihlsdrfg" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 6.png" id="18_yl1mh"]
 [ext_resource type="Texture2D" uid="uid://cugxvaib3bgdr" path="res://Asssets/Textures/Office/Monitor/Camera Flip.png" id="18_yqm2c"]
 [ext_resource type="Texture2D" uid="uid://1blw1ihmv78o" path="res://Asssets/Textures/Office/Door & Lights/R. Light/134.png" id="19_0ni12"]
-[ext_resource type="Script" uid="uid://dh43snriyyq0v" path="res://Scenes and Code/Code/Office Code/door_and_light_buttons.gd" id="19_gogq7"]
+[ext_resource type="Script" uid="uid://dh43snriyyq0v" path="res://Scenes and Code/Code/Game Code/Office Code/door_and_light_buttons.gd" id="19_gogq7"]
 [ext_resource type="Texture2D" uid="uid://djoutflkjyo22" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 7.png" id="19_m472j"]
 [ext_resource type="Texture2D" uid="uid://s1vn0iwwym5u" path="res://Asssets/Textures/Jumpscares/chica/jumpscare chica 8.png" id="20_e77ec"]
 [ext_resource type="Texture2D" uid="uid://c0dwrknsmmru4" path="res://Asssets/Textures/Office/Door & Lights/R. Light/135.png" id="20_gogq7"]
@@ -227,7 +227,7 @@
 [ext_resource type="Texture2D" uid="uid://jq8u0ejuw156" path="res://Asssets/Textures/Locations/West Hall/Foxy Run/340.png" id="114_jxqa5"]
 [ext_resource type="Texture2D" uid="uid://dttc7jih4mafi" path="res://Asssets/Textures/Static/17.png" id="114_ma73j"]
 [ext_resource type="Texture2D" uid="uid://cqibac0r24uh8" path="res://Asssets/Textures/Static/18.png" id="115_c53cb"]
-[ext_resource type="Script" uid="uid://fsdkn6mrybaj" path="res://Scenes and Code/Code/Camera Code/camera_view.gd" id="115_cixny"]
+[ext_resource type="Script" uid="uid://fsdkn6mrybaj" path="res://Scenes and Code/Code/Game Code/Camera Code/camera_view.gd" id="115_cixny"]
 [ext_resource type="Texture2D" uid="uid://bxs66v3axtmia" path="res://Asssets/Textures/Static/20.png" id="116_706w8"]
 [ext_resource type="Shader" uid="uid://cylnunao24ngi" path="res://Asssets/Shaders/Remove Black.gdshader" id="117_pc156"]
 [ext_resource type="AudioStream" uid="uid://c8tcus84tmdnu" path="res://Asssets/Audio/XSCREAM.wav" id="117_pjimp"]
@@ -237,7 +237,7 @@
 [ext_resource type="Texture2D" uid="uid://deyodhswbrigh" path="res://Asssets/Textures/Office/Map/145.png" id="126_sfj7n"]
 [ext_resource type="Texture2D" uid="uid://byqnxp0pf05y1" path="res://Asssets/Textures/Office/Map/164.png" id="127_cixny"]
 [ext_resource type="Texture2D" uid="uid://c0ulqkfga1218" path="res://Asssets/Textures/Text/camera disabled.png" id="128_w80um"]
-[ext_resource type="Script" uid="uid://dci2wirj6hd0m" path="res://Scenes and Code/Code/Camera Code/cams.gd" id="130_11a6c"]
+[ext_resource type="Script" uid="uid://dci2wirj6hd0m" path="res://Scenes and Code/Code/Game Code/Camera Code/cams.gd" id="130_11a6c"]
 [ext_resource type="PackedScene" uid="uid://dw74ibnekgqf6" path="res://Scenes and Code/Scenes/cam_button.tscn" id="130_423yb"]
 [ext_resource type="AudioStream" uid="uid://cagr8oafibhbl" path="res://Asssets/Audio/DOOR_POUNDING_ME_D0291401.wav" id="132_bdwk4"]
 [ext_resource type="Texture2D" uid="uid://3355bd60ihc4" path="res://Asssets/Textures/Other/Misc/11.png" id="132_eytbm"]
@@ -261,11 +261,11 @@
 [ext_resource type="Texture2D" uid="uid://da4qpeggu1caq" path="res://Asssets/Textures/Locations/Names/54.png" id="141_cmoux"]
 [ext_resource type="Texture2D" uid="uid://c43rcf5k3t13u" path="res://Asssets/Textures/Locations/Names/74.png" id="142_6ttvt"]
 [ext_resource type="Texture2D" uid="uid://dpdu7jv0hs6ms" path="res://Asssets/Textures/Locations/Names/76.png" id="143_eodv1"]
-[ext_resource type="Script" uid="uid://c17s8nwpv6fg3" path="res://Scenes and Code/Scenes/animatronic_ai.gd" id="154_kuees"]
-[ext_resource type="Script" uid="uid://bfkp245jpqqlw" path="res://Scenes and Code/Scenes/debug_info.gd" id="155_oeys7"]
+[ext_resource type="Script" uid="uid://c17s8nwpv6fg3" path="res://Scenes and Code/Code/Game Code/Animatronic/animatronic_ai.gd" id="154_kuees"]
+[ext_resource type="Script" uid="uid://bfkp245jpqqlw" path="res://Scenes and Code/Code/debug_info.gd" id="155_oeys7"]
 [ext_resource type="AudioStream" uid="uid://b3014e3dxvpk6" path="res://Asssets/Audio/run.wav" id="262_x7ut5"]
 [ext_resource type="Texture2D" uid="uid://b62v3wx2r081p" path="res://Asssets/Textures/UI & Misc/usage meter 1.png" id="264_4ofge"]
-[ext_resource type="Script" uid="uid://bvi5w14awfpgo" path="res://Scenes and Code/Scenes/power.gd" id="264_wq7rc"]
+[ext_resource type="Script" uid="uid://bvi5w14awfpgo" path="res://Scenes and Code/Code/Game Code/Power/power.gd" id="264_wq7rc"]
 [ext_resource type="Texture2D" uid="uid://b5gcgk523a58a" path="res://Asssets/Textures/UI & Misc/usage meter 2.png" id="265_owhb1"]
 [ext_resource type="FontFile" uid="uid://t5poni6udcrx" path="res://Asssets/Fonts/LcdSolid-VPzB.ttf" id="265_wq7rc"]
 [ext_resource type="Texture2D" uid="uid://ch8w8j26p1mkg" path="res://Asssets/Textures/UI & Misc/usage meter 3.png" id="266_wq7rc"]
@@ -273,6 +273,10 @@
 [ext_resource type="Texture2D" uid="uid://lmjhrc73eoax" path="res://Asssets/Textures/UI & Misc/usage meter 5.png" id="268_yl1mh"]
 [ext_resource type="Texture2D" uid="uid://drpuv5idgpx1e" path="res://Asssets/Textures/Text/usage.png" id="269_m472j"]
 [ext_resource type="Texture2D" uid="uid://dy8cfumbuduq0" path="res://Asssets/Textures/Text/power left.png" id="270_e77ec"]
+[ext_resource type="Script" uid="uid://dj53geae21r3t" path="res://Scenes and Code/Code/Game Code/Time/time.gd" id="273_gfy6c"]
+[ext_resource type="Script" uid="uid://inll5e6gj78w" path="res://Scenes and Code/Code/Title Screen Codes/night_label.gd" id="274_yl1mh"]
+[ext_resource type="AudioStream" uid="uid://b7gir6grto48t" path="res://Asssets/Audio/chimes 2.wav" id="275_e77ec"]
+[ext_resource type="AudioStream" uid="uid://s0yifx5oow8t" path="res://Asssets/Audio/CROWD_SMALL_CHIL_EC049202.wav" id="276_icqw1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_648li"]
 animations = [{
@@ -2298,6 +2302,124 @@ animation = &"Display"
 frame = 4
 
 [node name="Time" type="Node2D" parent="UI" unique_id=617892766]
+script = ExtResource("273_gfy6c")
+
+[node name="Shift Timer" type="Timer" parent="UI/Time" unique_id=815728092]
+one_shot = true
+
+[node name="Hour Label" type="Label" parent="UI/Time" unique_id=1401366817]
+offset_left = 1160.0
+offset_top = 32.0
+offset_right = 1267.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("265_wq7rc")
+theme_override_font_sizes/font_size = 35
+text = "12 AM"
+
+[node name="Night Label" type="Label" parent="UI/Time" unique_id=1803617615]
+texture_filter = 1
+offset_left = 1164.0
+offset_top = 73.0
+offset_right = 1255.0
+offset_bottom = 93.0
+theme_override_fonts/font = ExtResource("265_wq7rc")
+theme_override_font_sizes/font_size = 19
+text = "Night 1"
+script = ExtResource("274_yl1mh")
+
+[node name="6AM Screen" type="ColorRect" parent="UI/Time" unique_id=916019527]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AM" type="Label" parent="UI/Time/6AM Screen" unique_id=1185128767]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -43.0
+offset_right = 124.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("265_wq7rc")
+theme_override_font_sizes/font_size = 85
+text = "AM"
+
+[node name="5" type="Label" parent="UI/Time/6AM Screen" unique_id=139848221]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -43.0
+offset_right = 36.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("265_wq7rc")
+theme_override_font_sizes/font_size = 85
+text = "5"
+
+[node name="6" type="Label" parent="UI/Time/6AM Screen" unique_id=1029414121]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = 47.0
+offset_right = 36.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("265_wq7rc")
+theme_override_font_sizes/font_size = 85
+text = "6"
+
+[node name="6 hider" type="ColorRect" parent="UI/Time/6AM Screen" unique_id=147309606]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 52.0
+offset_right = -7.0
+offset_bottom = 133.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="5 hider" type="ColorRect" parent="UI/Time/6AM Screen" unique_id=377187492]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -140.0
+offset_right = -7.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Chime Sound" type="AudioStreamPlayer2D" parent="UI/Time" unique_id=1568469975]
+stream = ExtResource("275_e77ec")
+
+[node name="Cheer Sound" type="AudioStreamPlayer2D" parent="UI/Time" unique_id=1566728338]
+stream = ExtResource("276_icqw1")
 
 [node name="Debug Info" type="CanvasLayer" parent="." unique_id=2001290515]
 script = ExtResource("155_oeys7")
@@ -2342,3 +2464,4 @@ text = "Foxy Location: N/A"
 [connection signal="jump_or_repel_fox" from="Animatronic AI" to="." method="jump_or_repel_fox"]
 [connection signal="timeout" from="Animatronic AI/Foxy/Stall Timer" to="Animatronic AI" method="_on_stall_timer_timeout"]
 [connection signal="timeout" from="UI/Power/Power Display/Timer" to="UI/Power" method="_on_timer_timeout"]
+[connection signal="timeout" from="UI/Time/Shift Timer" to="UI/Time" method="_on_shift_timer_timeout"]
